@@ -7,14 +7,9 @@
 #include <netinet/in.h> //Linux IPv4 protocol implementation
 #include <arpa/inet.h>  //convert IP address from text to binary
 
-
-FILE fp;
-int save_one_log(int cnt, clock_t UPL){
-
-}
-
 int main(int argc, char** argv)
 {
+    printf("[SERVER]: Server Started.\n");
     int PORT;
     int SIZEc2s, SIZEs2c;
     if (argc != 4){
@@ -25,6 +20,7 @@ int main(int argc, char** argv)
         PORT = atoi(argv[1]);
         SIZEc2s = atoi(argv[2]);
         SIZEs2c = atoi(argv[3]);
+        printf("[SERVER]: Parameters: Port:%d c2s:%d s2c:%d\n",PORT,SIZEc2s,SIZEs2c);
     }
 
     struct sockaddr_in SERVER, CLIENT;
@@ -34,7 +30,7 @@ int main(int argc, char** argv)
     SERVER.sin_family = AF_INET;
 
     char WBuffer[102400], RBuffer[102400];
-
+    printf("[SERVER]: Server Initialized.\n");
     int ListenSocket, ResponseSocket;
     socklen_t CLIENT_LEN;
     ListenSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
@@ -42,6 +38,7 @@ int main(int argc, char** argv)
         printf("[SERVER]: bind failed.\n");
         exit(1);
     }
+    printf("[SERVER]: Bind Succed.\n");
 
     listen(ListenSocket,5);
     CLIENT_LEN = sizeof(CLIENT);
@@ -57,11 +54,8 @@ int main(int argc, char** argv)
 
     int cnt = 0;
     while(1){
-
         read (ResponseSocket, RBuffer, SIZEc2s);
-
         write(ResponseSocket, WBuffer, SIZEs2c);
-
     }
     return 0;
 }

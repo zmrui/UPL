@@ -30,23 +30,24 @@ int main(int argc, char** argv)
         COUNT = atoi(argv[3]);
         SIZEc2s = atoi(argv[4]);
         SIZEs2c = atoi(argv[5]);
+        printf("[CLIENT]: Parameters: IP:%s Port:%d COUNT:%d c2s:%d s2c:%d\n",IPADDR, PORT, COUNT, SIZEc2s, SIZEs2c);
     }
 
     struct sockaddr_in SERVER;
     memset(&SERVER, 0, sizeof(SERVER));
-    inet_pton(AF_INET, IPADDR, SERVER.sin_addr.s_addr);
+    inet_pton(AF_INET, IPADDR, &SERVER.sin_addr.s_addr);
     SERVER.sin_port = PORT;
     SERVER.sin_family = AF_INET;
-
+    
     char WBuffer[102400], RBuffer[102400];
 
     int MySocket;
     MySocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if(connect(MySocket,(struct sockaddr*) &SERVER, sizeof(SERVER))<0){
-        printf("[CLIENT]: Connect failed.\n");
+        printf("[CLIENT]: %d Connect failed.\n",connect(MySocket,(struct sockaddr*) &SERVER, sizeof(SERVER)));
         exit(1);
     }
-
+    printf("[CLIENT]: Connected.\n");
     int cnt = 0;
     for(cnt = 0; cnt < COUNT; cnt++){
         gettimeofday(&StartTime, NULL);
