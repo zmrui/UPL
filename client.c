@@ -29,7 +29,7 @@ int main(int argc, char** argv)
         PORT = atoi(argv[2]);
         COUNT = atoi(argv[3]);
         SIZEc2s = atoi(argv[4]);
-        SIZEs2c = atoi(argv[5);
+        SIZEs2c = atoi(argv[5]);
     }
 
     struct sockaddr_in SERVER;
