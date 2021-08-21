@@ -34,9 +34,7 @@ int main(int argc, char** argv)
 
     struct sockaddr_in SERVER;
     memset(&SERVER, 0, sizeof(SERVER));
-    //TODO
-    SERVER.sin_addr.s_addr = IPADDR;
-    //TODO
+    inet_pton(AF_INET, IPADDR, SERVER.sin_addr.s_addr);
     SERVER.sin_port = PORT;
     SERVER.sin_family = AF_INET;
 

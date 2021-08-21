@@ -1,5 +1,4 @@
 //UPL Simple Socket Server
-//UPL Simple Socket Client
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -58,7 +57,7 @@ int main(int argc, char** argv)
 
     int cnt = 0;
     while(1){
-        
+
         read (ResponseSocket, RBuffer, SIZEc2s);
 
         write(ResponseSocket, WBuffer, SIZEs2c);
