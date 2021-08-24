@@ -39,7 +39,7 @@ int main(int argc, char** argv)
     SERVER.sin_port = PORT;
     SERVER.sin_family = AF_INET;
     
-    char WBuffer[102400], RBuffer[102400];
+    char WBuffer[102400], RBuffer[102400]; memset(WBuffer,1,sizeof(WBuffer));
 
     int MySocket;
     MySocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
