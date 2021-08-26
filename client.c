@@ -58,8 +58,10 @@ int main(int argc, char** argv)
 
         gettimeofday(&EndTime, NULL);
         
-        printf("[CLIENT]: Client's [No.%d] UPL Time is [%ld Second, %ld Microsecond].\n", 
-                                    cnt+1, (EndTime.tv_sec-StartTime.tv_sec), (EndTime.tv_usec-StartTime.tv_usec));
+        long us = 1000000*(EndTime.tv_sec-StartTime.tv_sec)+(EndTime.tv_usec-StartTime.tv_usec);
+        double ms = us/1000.0;
+        printf("[CLIENT]: Client's [No.%d] \tUPL Time is [%ld us] =\t [%lf ms].\n", 
+                                    cnt+1, us, ms);
     }
     return 0;
 }
