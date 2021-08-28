@@ -6,6 +6,7 @@
 #include <sys/types.h>  //struct used in socket
 #include <netinet/in.h> //Linux IPv4 protocol implementation
 #include <arpa/inet.h>  //convert IP address from text to binary
+#include <netinet/tcp.h> //TCP
 #include <sys/time.h>
 
 FILE fp;
@@ -41,6 +42,7 @@ int main(int argc, char** argv)
     
     char WBuffer[102400], RBuffer[102400]; memset(WBuffer,1,sizeof(WBuffer));
 
+
     int MySocket;
     MySocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if(connect(MySocket,(struct sockaddr*) &SERVER, sizeof(SERVER))<0){
@@ -48,6 +50,18 @@ int main(int argc, char** argv)
         exit(1);
     }
     printf("[CLIENT]: Connected.\n");
+
+
+    struct tcp_info TCPInfo;
+    socklen_t tcp_info_length = sizeof(TCPInfo);
+    int ret;
+    
+    unsigned int RTTSum = 0;
+    unsigned int RTT = 0;
+    unsigned int RTTVAR = 0;
+    long UPLSum = 0;
+    long UPL = 0;
+
     int cnt = 0;
     for(cnt = 0; cnt < COUNT; cnt++){
         gettimeofday(&StartTime, NULL);
@@ -57,11 +71,38 @@ int main(int argc, char** argv)
         read (MySocket,RBuffer,SIZEs2c);
 
         gettimeofday(&EndTime, NULL);
+
+        getsockopt(MySocket, SOL_TCP, TCP_INFO, &TCPInfo, &tcp_info_length);
+
+        RTT = TCPInfo.tcpi_rtt;
+        RTTVAR = TCPInfo.tcpi_rttvar;
+
+        RTTSum += RTT;
         
-        long us = 1000000*(EndTime.tv_sec-StartTime.tv_sec)+(EndTime.tv_usec-StartTime.tv_usec);
-        double ms = us/1000.0;
-        printf("[CLIENT]: Client's [No.%d] \tUPL Time is [%ld us] =\t [%lf ms].\n", 
-                                    cnt+1, us, ms);
+        UPL = 1000000*(EndTime.tv_sec-StartTime.tv_sec)+(EndTime.tv_usec-StartTime.tv_usec);
+        UPLSum += UPL;
+
+        printf("[CLIENT]:[%d]UPL:[%ld Microseconds]RTT:[%u Microseconds]RTTVAR:[%u]\n", cnt+1, UPL, RTT, RTTVAR);
     }
+    
+    double av_RTT, av_UPL;
+    av_RTT = 1.0*RTTSum/COUNT;
+    av_UPL = 1.0*UPLSum/COUNT;
+
+    unsigned char tcpi_retransmits;
+    unsigned int tcpi_rto,tcpi_lost,tcpi_retrans,tcpi_snd_cwnd,tcpi_snd_ssthresh,tcpi_total_retrans;
+
+    tcpi_retransmits = TCPInfo.tcpi_retransmits;
+    tcpi_rto = TCPInfo.tcpi_rto;
+    tcpi_lost = TCPInfo.tcpi_lost;
+    tcpi_retrans = TCPInfo.tcpi_retrans;
+    tcpi_snd_cwnd = TCPInfo.tcpi_snd_cwnd;
+    tcpi_snd_ssthresh = TCPInfo.tcpi_snd_ssthresh;
+    tcpi_total_retrans = TCPInfo.tcpi_total_retrans;
+
+
+    
+    printf("[CLIENT_FINAL]\nAverageUPL=[%lf]\nAverageRTT=[%lf]\ntcpi_retransmits=[%d]\ntcpi_lost=[%u]\ntcpi_retrans=[%u]\ntcpi_snd_cwnd=[%u]\ntcpi_snd_ssthresh=[%u]\ntcpi_total_retrans=[%u]\n",av_UPL,av_RTT,tcpi_retransmits,tcpi_rto,tcpi_lost,tcpi_retrans,tcpi_snd_cwnd,tcpi_snd_ssthresh,tcpi_total_retrans);
+    
     return 0;
 }
