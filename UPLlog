@@ -1,0 +1,1845 @@
+=====Start a Test=====
+[MININET:] bf1:1 bf2:171 bw1:10 bw2:10 dl1:1ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:1024
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[2206.648000 ms]RTT:[405.201000 ms]RTTVAR:[216313]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[2175.293000 ms]RTT:[380.732000 ms]RTTVAR:[211171]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[2078.183000 ms]RTT:[359.483000 ms]RTTVAR:[200877]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[1447.641000 ms]RTT:[340.643000 ms]RTTVAR:[188337]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[212.834000 ms]RTT:[324.651000 ms]RTTVAR:[173237]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[209.279000 ms]RTT:[310.214000 ms]RTTVAR:[158801]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[210.198000 ms]RTT:[297.697000 ms]RTTVAR:[144136]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[207.940000 ms]RTT:[286.462000 ms]RTTVAR:[130571]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[211.225000 ms]RTT:[277.041000 ms]RTTVAR:[116771]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[216.394000 ms]RTT:[269.444000 ms]RTTVAR:[102772]
+[CLIENT_FINAL]
+    AverageUPL=[917.563000]
+    AverageRTT=[325.156000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[832000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=214 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=214 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=224 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=210 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=257 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=225 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=221 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=213 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=220 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=214 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9024ms
+rtt min/avg/max/mdev = 209.801/221.099/257.398/13.041 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:171 bw1:10 bw2:10 dl1:1ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:2048
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:2048
+[CLIENT]: Connected.
+client have read 1448
+client have read 2048
+client 1 read filish
+[CLIENT]:[1]UPL:[2357.267000 ms]RTT:[395.754000 ms]RTTVAR:[211219]
+client have read 1448
+client have read 2048
+client 2 read filish
+[CLIENT]:[2]UPL:[2273.486000 ms]RTT:[372.401000 ms]RTTVAR:[205121]
+client have read 1448
+client have read 2048
+client 3 read filish
+[CLIENT]:[3]UPL:[2174.814000 ms]RTT:[352.030000 ms]RTTVAR:[194583]
+client have read 2048
+client 4 read filish
+[CLIENT]:[4]UPL:[1400.129000 ms]RTT:[334.126000 ms]RTTVAR:[181744]
+client have read 2048
+client 5 read filish
+[CLIENT]:[5]UPL:[1375.759000 ms]RTT:[318.458000 ms]RTTVAR:[167644]
+client have read 2048
+client 6 read filish
+[CLIENT]:[6]UPL:[1310.883000 ms]RTT:[304.660000 ms]RTTVAR:[153330]
+client have read 2048
+client 7 read filish
+[CLIENT]:[7]UPL:[1248.810000 ms]RTT:[292.672000 ms]RTTVAR:[138973]
+client have read 2048
+client 8 read filish
+[CLIENT]:[8]UPL:[1216.842000 ms]RTT:[282.241000 ms]RTTVAR:[125091]
+client have read 2048
+client 9 read filish
+[CLIENT]:[9]UPL:[1151.099000 ms]RTT:[273.110000 ms]RTTVAR:[112082]
+client have read 2048
+client 10 read filish
+[CLIENT]:[10]UPL:[1087.519000 ms]RTT:[265.045000 ms]RTTVAR:[100191]
+[CLIENT_FINAL]
+    AverageUPL=[1559.660000]
+    AverageRTT=[319.049000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[812000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=220 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=211 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=210 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=207 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=208 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=208 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9014ms
+rtt min/avg/max/mdev = 207.247/210.005/219.754/3.380 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:171 bw1:10 bw2:10 dl1:1ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:512 s2c:1024
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:512 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[2154.835000 ms]RTT:[396.488000 ms]RTTVAR:[211650]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[2144.459000 ms]RTT:[373.123000 ms]RTTVAR:[205467]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[2049.179000 ms]RTT:[352.622000 ms]RTTVAR:[195103]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[1416.211000 ms]RTT:[334.729000 ms]RTTVAR:[182113]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[208.863000 ms]RTT:[318.979000 ms]RTTVAR:[168083]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[208.792000 ms]RTT:[305.190000 ms]RTTVAR:[153642]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[209.912000 ms]RTT:[293.266000 ms]RTTVAR:[139078]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[208.346000 ms]RTT:[282.636000 ms]RTTVAR:[125570]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[209.175000 ms]RTT:[273.438000 ms]RTTVAR:[112573]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[209.375000 ms]RTT:[265.415000 ms]RTTVAR:[100477]
+[CLIENT_FINAL]
+    AverageUPL=[901.914000]
+    AverageRTT=[319.588000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[812000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=213 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=210 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=208 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=207 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=208 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=209 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9011ms
+rtt min/avg/max/mdev = 207.127/209.114/213.131/1.536 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:171 bw1:10 bw2:10 dl1:1ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:512 s2c:2048
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:512 s2c:2048
+[CLIENT]: Connected.
+client have read 1448
+client have read 2048
+client 1 read filish
+[CLIENT]:[1]UPL:[2419.936000 ms]RTT:[405.836000 ms]RTTVAR:[216774]
+client have read 1448
+client have read 2048
+client 2 read filish
+[CLIENT]:[2]UPL:[2301.533000 ms]RTT:[381.709000 ms]RTTVAR:[210834]
+client have read 1448
+client have read 2048
+client 3 read filish
+[CLIENT]:[3]UPL:[2206.103000 ms]RTT:[360.311000 ms]RTTVAR:[200922]
+client have read 2048
+client 4 read filish
+[CLIENT]:[4]UPL:[1429.194000 ms]RTT:[341.626000 ms]RTTVAR:[188063]
+client have read 2048
+client 5 read filish
+[CLIENT]:[5]UPL:[1407.638000 ms]RTT:[325.006000 ms]RTTVAR:[174287]
+client have read 2048
+client 6 read filish
+[CLIENT]:[6]UPL:[1342.489000 ms]RTT:[310.584000 ms]RTTVAR:[159558]
+client have read 2048
+client 7 read filish
+[CLIENT]:[7]UPL:[1281.254000 ms]RTT:[298.028000 ms]RTTVAR:[144781]
+client have read 2048
+client 8 read filish
+[CLIENT]:[8]UPL:[1246.682000 ms]RTT:[286.944000 ms]RTTVAR:[130754]
+client have read 2048
+client 9 read filish
+[CLIENT]:[9]UPL:[1183.472000 ms]RTT:[277.186000 ms]RTTVAR:[117582]
+client have read 2048
+client 10 read filish
+[CLIENT]:[10]UPL:[1119.213000 ms]RTT:[268.558000 ms]RTTVAR:[105442]
+[CLIENT_FINAL]
+    AverageUPL=[1593.751000]
+    AverageRTT=[325.578000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[836000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=210 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=267 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9012ms
+rtt min/avg/max/mdev = 208.693/218.430/267.159/19.213 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:342 bw1:10 bw2:10 dl1:1ms dl2:200ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:1024
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[4306.148000 ms]RTT:[779.676000 ms]RTTVAR:[416444]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[4351.338000 ms]RTT:[733.464000 ms]RTTVAR:[404756]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[4000.983000 ms]RTT:[692.999000 ms]RTTVAR:[384497]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[2923.654000 ms]RTT:[657.552000 ms]RTTVAR:[359268]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[409.686000 ms]RTT:[626.553000 ms]RTTVAR:[331448]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[409.234000 ms]RTT:[599.373000 ms]RTTVAR:[302946]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[409.363000 ms]RTT:[575.606000 ms]RTTVAR:[274744]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[409.074000 ms]RTT:[554.775000 ms]RTTVAR:[247720]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[407.907000 ms]RTT:[536.401000 ms]RTTVAR:[222538]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[408.474000 ms]RTT:[520.395000 ms]RTTVAR:[198916]
+[CLIENT_FINAL]
+    AverageUPL=[1803.586000]
+    AverageRTT=[627.679000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[1600000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=418 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=410 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=410 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=410 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=408 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9005ms
+rtt min/avg/max/mdev = 407.949/409.605/417.534/2.741 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:342 bw1:10 bw2:10 dl1:1ms dl2:200ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:2048
+[SERVER]: Server Initialized.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:2048
+[CLIENT]: Connected.
+client have read 1448
+client have read 2048
+client 1 read filish
+[CLIENT]:[1]UPL:[4822.072000 ms]RTT:[785.656000 ms]RTTVAR:[419370]
+client have read 1448
+client have read 2048
+client 2 read filish
+[CLIENT]:[2]UPL:[4512.148000 ms]RTT:[739.386000 ms]RTTVAR:[407067]
+client have read 1448
+client have read 2048
+client 3 read filish
+[CLIENT]:[3]UPL:[4417.266000 ms]RTT:[698.131000 ms]RTTVAR:[387811]
+client have read 1448
+client have read 2048
+client 4 read filish
+[CLIENT]:[4]UPL:[2971.588000 ms]RTT:[662.022000 ms]RTTVAR:[363077]
+client have read 1448
+client have read 2048
+client 5 read filish
+[CLIENT]:[5]UPL:[2818.860000 ms]RTT:[630.458000 ms]RTTVAR:[335435]
+client have read 1448
+client have read 2048
+client 6 read filish
+[CLIENT]:[6]UPL:[2811.161000 ms]RTT:[602.923000 ms]RTTVAR:[306647]
+client have read 1448
+client have read 2048
+client 7 read filish
+[CLIENT]:[7]UPL:[2560.271000 ms]RTT:[578.736000 ms]RTTVAR:[278359]
+client have read 1448
+client have read 2048
+client 8 read filish
+[CLIENT]:[8]UPL:[2368.267000 ms]RTT:[557.614000 ms]RTTVAR:[251013]
+client have read 1448
+client have read 2048
+client 9 read filish
+[CLIENT]:[9]UPL:[2274.667000 ms]RTT:[539.111000 ms]RTTVAR:[225265]
+client have read 1448
+client have read 2048
+client 10 read filish
+[CLIENT]:[10]UPL:[2172.632000 ms]RTT:[522.871000 ms]RTTVAR:[201429]
+[CLIENT_FINAL]
+    AverageUPL=[3172.893000]
+    AverageRTT=[631.690000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[1612000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=422 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=410 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=407 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=462 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=410 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=410 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9003ms
+rtt min/avg/max/mdev = 407.332/415.659/462.008/15.938 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:342 bw1:10 bw2:10 dl1:1ms dl2:200ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:512 s2c:1024
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:512 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[4184.994000 ms]RTT:[773.869000 ms]RTTVAR:[413251]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[4096.604000 ms]RTT:[728.421000 ms]RTTVAR:[400835]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[4031.409000 ms]RTT:[688.540000 ms]RTTVAR:[380388]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[2949.336000 ms]RTT:[656.112000 ms]RTTVAR:[350147]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[436.040000 ms]RTT:[628.588000 ms]RTTVAR:[317658]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[409.593000 ms]RTT:[601.199000 ms]RTTVAR:[293021]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[410.144000 ms]RTT:[577.308000 ms]RTTVAR:[267549]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[410.003000 ms]RTT:[556.383000 ms]RTTVAR:[242511]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[413.196000 ms]RTT:[538.469000 ms]RTTVAR:[217711]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[411.038000 ms]RTT:[522.526000 ms]RTTVAR:[195170]
+[CLIENT_FINAL]
+    AverageUPL=[1775.235000]
+    AverageRTT=[627.141000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[1576000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=419 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=421 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=415 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=417 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=415 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=417 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=410 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=408 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9011ms
+rtt min/avg/max/mdev = 407.561/413.774/421.205/4.691 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:342 bw1:10 bw2:10 dl1:1ms dl2:200ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:512 s2c:2048
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:512 s2c:2048
+[CLIENT]: Connected.
+client have read 1448
+client have read 2048
+client 1 read filish
+[CLIENT]:[1]UPL:[4830.043000 ms]RTT:[783.324000 ms]RTTVAR:[418635]
+client have read 1448
+client have read 2048
+client 2 read filish
+[CLIENT]:[2]UPL:[4512.096000 ms]RTT:[736.574000 ms]RTTVAR:[407476]
+client have read 1448
+client have read 2048
+client 3 read filish
+[CLIENT]:[3]UPL:[4415.230000 ms]RTT:[695.713000 ms]RTTVAR:[387329]
+client have read 1448
+client have read 2048
+client 4 read filish
+[CLIENT]:[4]UPL:[2973.591000 ms]RTT:[659.942000 ms]RTTVAR:[362039]
+client have read 1448
+client have read 2048
+client 5 read filish
+[CLIENT]:[5]UPL:[2829.753000 ms]RTT:[629.886000 ms]RTTVAR:[331642]
+client have read 1448
+client have read 2048
+client 6 read filish
+[CLIENT]:[6]UPL:[2803.794000 ms]RTT:[602.539000 ms]RTTVAR:[303426]
+client have read 1448
+client have read 2048
+client 7 read filish
+[CLIENT]:[7]UPL:[2557.883000 ms]RTT:[578.307000 ms]RTTVAR:[276032]
+client have read 1448
+client have read 2048
+client 8 read filish
+[CLIENT]:[8]UPL:[2368.524000 ms]RTT:[557.194000 ms]RTTVAR:[249250]
+client have read 1448
+client have read 2048
+client 9 read filish
+[CLIENT]:[9]UPL:[2269.709000 ms]RTT:[538.766000 ms]RTTVAR:[223794]
+client have read 1448
+client have read 2048
+client 10 read filish
+[CLIENT]:[10]UPL:[2145.280000 ms]RTT:[522.476000 ms]RTTVAR:[200425]
+[CLIENT_FINAL]
+    AverageUPL=[3170.590000]
+    AverageRTT=[630.472000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[1608000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=421 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=422 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=459 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=417 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=415 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=417 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9014ms
+rtt min/avg/max/mdev = 407.870/418.667/459.344/14.494 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:17 bf2:171 bw1:10 bw2:10 dl1:10ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:1024
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[244.063000 ms]RTT:[470.696000 ms]RTTVAR:[251781]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[245.925000 ms]RTT:[442.588000 ms]RTTVAR:[245052]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[242.660000 ms]RTT:[417.577000 ms]RTTVAR:[233810]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[245.286000 ms]RTT:[396.030000 ms]RTTVAR:[218452]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[246.312000 ms]RTT:[377.303000 ms]RTTVAR:[201293]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[249.395000 ms]RTT:[361.302000 ms]RTTVAR:[182971]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[244.048000 ms]RTT:[346.624000 ms]RTTVAR:[166585]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[246.418000 ms]RTT:[334.087000 ms]RTTVAR:[150014]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[244.110000 ms]RTT:[322.830000 ms]RTTVAR:[135023]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[245.605000 ms]RTT:[313.161000 ms]RTTVAR:[120605]
+[CLIENT_FINAL]
+    AverageUPL=[245.382000]
+    AverageRTT=[378.219000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[968000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=250 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=250 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=243 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=245 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=245 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=245 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=250 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=245 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9023ms
+rtt min/avg/max/mdev = 243.285/246.073/250.460/2.663 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:17 bf2:171 bw1:10 bw2:10 dl1:10ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:2048
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:2048
+[CLIENT]: Connected.
+client have read 2048
+client 1 read filish
+[CLIENT]:[1]UPL:[246.504000 ms]RTT:[462.517000 ms]RTTVAR:[246706]
+client have read 2048
+client 2 read filish
+[CLIENT]:[2]UPL:[244.165000 ms]RTT:[435.214000 ms]RTTVAR:[239635]
+client have read 2048
+client 3 read filish
+[CLIENT]:[3]UPL:[245.474000 ms]RTT:[411.482000 ms]RTTVAR:[227191]
+client have read 2048
+client 4 read filish
+[CLIENT]:[4]UPL:[245.676000 ms]RTT:[390.745000 ms]RTTVAR:[211867]
+client have read 2048
+client 5 read filish
+[CLIENT]:[5]UPL:[243.692000 ms]RTT:[372.353000 ms]RTTVAR:[195684]
+client have read 2048
+client 6 read filish
+[CLIENT]:[6]UPL:[243.535000 ms]RTT:[356.216000 ms]RTTVAR:[179036]
+client have read 2048
+client 7 read filish
+[CLIENT]:[7]UPL:[243.870000 ms]RTT:[342.162000 ms]RTTVAR:[162386]
+client have read 2048
+client 8 read filish
+[CLIENT]:[8]UPL:[245.414000 ms]RTT:[330.055000 ms]RTTVAR:[146004]
+client have read 2048
+client 9 read filish
+[CLIENT]:[9]UPL:[246.069000 ms]RTT:[319.519000 ms]RTTVAR:[130574]
+client have read 2048
+client 10 read filish
+[CLIENT]:[10]UPL:[244.042000 ms]RTT:[310.067000 ms]RTTVAR:[116835]
+[CLIENT_FINAL]
+    AverageUPL=[244.844000]
+    AverageRTT=[373.033000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[948000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=247 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=247 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=245 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=244 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9017ms
+rtt min/avg/max/mdev = 243.581/244.612/247.190/1.245 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:17 bf2:171 bw1:10 bw2:10 dl1:10ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:512 s2c:1024
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:512 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[247.050000 ms]RTT:[466.799000 ms]RTTVAR:[249178]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[244.925000 ms]RTT:[439.047000 ms]RTTVAR:[242389]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[243.688000 ms]RTT:[414.608000 ms]RTTVAR:[230670]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[245.631000 ms]RTT:[393.469000 ms]RTTVAR:[215281]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[244.193000 ms]RTT:[374.791000 ms]RTTVAR:[198816]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[245.379000 ms]RTT:[358.599000 ms]RTTVAR:[181496]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[244.421000 ms]RTT:[344.317000 ms]RTTVAR:[164686]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[246.388000 ms]RTT:[332.062000 ms]RTTVAR:[148024]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[244.664000 ms]RTT:[321.125000 ms]RTTVAR:[132893]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[245.184000 ms]RTT:[311.623000 ms]RTTVAR:[118673]
+[CLIENT_FINAL]
+    AverageUPL=[245.152000]
+    AverageRTT=[375.644000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[956000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=248 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=246 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=254 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=242 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=247 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=246 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=245 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=245 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9024ms
+rtt min/avg/max/mdev = 242.204/246.149/254.222/3.129 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:17 bf2:171 bw1:10 bw2:10 dl1:10ms dl2:100ms
+[SERVER]: Server Started.[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:512 s2c:2048
+[CLIENT]: Connected.
+client have read 2048
+client 1 read filish
+[CLIENT]:[1]UPL:[246.081000 ms]RTT:[466.257000 ms]RTTVAR:[248956]
+client have read 2048
+client 2 read filish
+[CLIENT]:[2]UPL:[243.431000 ms]RTT:[438.389000 ms]RTTVAR:[242452]
+client have read 2048
+client 3 read filish
+[CLIENT]:[3]UPL:[249.703000 ms]RTT:[414.792000 ms]RTTVAR:[229033]
+client have read 2048
+client 4 read filish
+[CLIENT]:[4]UPL:[247.305000 ms]RTT:[393.835000 ms]RTTVAR:[213689]
+client have read 2048
+client 5 read filish
+[CLIENT]:[5]UPL:[252.465000 ms]RTT:[376.146000 ms]RTTVAR:[195644]
+client have read 2048
+client 6 read filish
+[CLIENT]:[6]UPL:[249.372000 ms]RTT:[360.283000 ms]RTTVAR:[178460]
+client have read 2048
+client 7 read filish
+[CLIENT]:[7]UPL:[248.773000 ms]RTT:[346.330000 ms]RTTVAR:[161750]
+client have read 2048
+client 8 read filish
+[CLIENT]:[8]UPL:[324.199000 ms]RTT:[343.551000 ms]RTTVAR:[126870]
+client have read 2048
+client 9 read filish
+[CLIENT]:[9]UPL:[339.988000 ms]RTT:[343.092000 ms]RTTVAR:[96071]
+client have read 2048
+client 10 read filish
+[CLIENT]:[10]UPL:[251.095000 ms]RTT:[331.582000 ms]RTTVAR:[95073]
+[CLIENT_FINAL]
+    AverageUPL=[265.241000]
+    AverageRTT=[381.425000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[912000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=248 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=346 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=245 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=245 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=251 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=243 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=260 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=245 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9038ms
+rtt min/avg/max/mdev = 243.487/257.194/345.972/29.981 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:17 bf2:342 bw1:10 bw2:10 dl1:10ms dl2:200ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:1024
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[448.732000 ms]RTT:[844.370000 ms]RTTVAR:[450509]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[445.495000 ms]RTT:[794.501000 ms]RTTVAR:[437620]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[445.521000 ms]RTT:[750.866000 ms]RTTVAR:[415485]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[447.777000 ms]RTT:[712.949000 ms]RTTVAR:[387448]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[446.890000 ms]RTT:[679.675000 ms]RTTVAR:[357134]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[445.240000 ms]RTT:[650.354000 ms]RTTVAR:[326492]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[446.145000 ms]RTT:[624.812000 ms]RTTVAR:[295953]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[448.455000 ms]RTT:[602.752000 ms]RTTVAR:[266085]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[452.336000 ms]RTT:[583.937000 ms]RTTVAR:[237193]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[448.094000 ms]RTT:[566.947000 ms]RTTVAR:[211876]
+[CLIENT_FINAL]
+    AverageUPL=[447.468000]
+    AverageRTT=[681.116000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[1724000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=454 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=446 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=446 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=450 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=445 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=451 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=470 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=450 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=454 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=445 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9008ms
+rtt min/avg/max/mdev = 444.663/450.817/469.536/7.006 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:17 bf2:342 bw1:10 bw2:10 dl1:10ms dl2:200ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:2048
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:2048
+[CLIENT]: Connected.
+client have read 2048
+client 1 read filish
+[CLIENT]:[1]UPL:[446.820000 ms]RTT:[839.455000 ms]RTTVAR:[447815]
+client have read 2048
+client 2 read filish
+[CLIENT]:[2]UPL:[444.426000 ms]RTT:[790.058000 ms]RTTVAR:[434655]
+client have read 2048
+client 3 read filish
+[CLIENT]:[3]UPL:[443.746000 ms]RTT:[746.751000 ms]RTTVAR:[412606]
+client have read 2048
+client 4 read filish
+[CLIENT]:[4]UPL:[451.175000 ms]RTT:[709.790000 ms]RTTVAR:[383377]
+client have read 2048
+client 5 read filish
+[CLIENT]:[5]UPL:[444.549000 ms]RTT:[676.613000 ms]RTTVAR:[353886]
+client have read 1448
+client have read 2048
+client 6 read filish
+[CLIENT]:[6]UPL:[453.227000 ms]RTT:[647.633000 ms]RTTVAR:[323373]
+client have read 1448
+client have read 2048
+client 7 read filish
+[CLIENT]:[7]UPL:[450.837000 ms]RTT:[622.015000 ms]RTTVAR:[293768]
+client have read 1448
+client have read 2048
+client 8 read filish
+[CLIENT]:[8]UPL:[453.530000 ms]RTT:[599.717000 ms]RTTVAR:[264921]
+client have read 1448
+client have read 2048
+client 9 read filish
+[CLIENT]:[9]UPL:[454.228000 ms]RTT:[580.304000 ms]RTTVAR:[237517]
+client have read 1448
+client have read 2048
+client 10 read filish
+[CLIENT]:[10]UPL:[452.897000 ms]RTT:[563.390000 ms]RTTVAR:[211966]
+[CLIENT_FINAL]
+    AverageUPL=[449.543000]
+    AverageRTT=[677.572000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[1716000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=451 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=446 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=444 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=444 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=448 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=444 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=468 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=444 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=452 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=445 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9016ms
+rtt min/avg/max/mdev = 443.670/448.686/468.370/7.161 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:17 bf2:342 bw1:10 bw2:10 dl1:10ms dl2:200ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:512 s2c:1024
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:512 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[445.624000 ms]RTT:[837.999000 ms]RTTVAR:[447087]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[444.139000 ms]RTT:[788.743000 ms]RTTVAR:[433826]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[445.335000 ms]RTT:[745.798000 ms]RTTVAR:[411260]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[446.165000 ms]RTT:[708.322000 ms]RTTVAR:[383396]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[444.895000 ms]RTT:[675.378000 ms]RTTVAR:[353436]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[443.404000 ms]RTT:[646.371000 ms]RTTVAR:[323092]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[444.535000 ms]RTT:[621.127000 ms]RTTVAR:[292806]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[443.076000 ms]RTT:[598.861000 ms]RTTVAR:[264136]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[443.828000 ms]RTT:[579.470000 ms]RTTVAR:[236884]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[444.497000 ms]RTT:[562.582000 ms]RTTVAR:[211439]
+[CLIENT_FINAL]
+    AverageUPL=[444.549000]
+    AverageRTT=[676.465000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[1712000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=448 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=446 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=447 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=444 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=445 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=446 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=445 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=444 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=445 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=443 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9007ms
+rtt min/avg/max/mdev = 443.085/445.296/447.786/1.378 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:17 bf2:342 bw1:10 bw2:10 dl1:10ms dl2:200ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:512 s2c:2048
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:512 s2c:2048
+[CLIENT]: Connected.
+client have read 2048
+client 1 read filish
+[CLIENT]:[1]UPL:[445.847000 ms]RTT:[851.467000 ms]RTTVAR:[455002]
+client have read 2048
+client 2 read filish
+[CLIENT]:[2]UPL:[443.639000 ms]RTT:[800.464000 ms]RTTVAR:[443258]
+client have read 2048
+client 3 read filish
+[CLIENT]:[3]UPL:[446.276000 ms]RTT:[756.168000 ms]RTTVAR:[421035]
+client have read 2048
+client 4 read filish
+[CLIENT]:[4]UPL:[445.156000 ms]RTT:[717.271000 ms]RTTVAR:[393570]
+client have read 2048
+client 5 read filish
+[CLIENT]:[5]UPL:[446.170000 ms]RTT:[683.363000 ms]RTTVAR:[362994]
+client have read 1448
+client have read 2048
+client 6 read filish
+[CLIENT]:[6]UPL:[452.538000 ms]RTT:[653.513000 ms]RTTVAR:[331944]
+client have read 1448
+client have read 2048
+client 7 read filish
+[CLIENT]:[7]UPL:[453.450000 ms]RTT:[627.453000 ms]RTTVAR:[301078]
+client have read 1448
+client have read 2048
+client 8 read filish
+[CLIENT]:[8]UPL:[453.286000 ms]RTT:[604.539000 ms]RTTVAR:[271637]
+client have read 1448
+client have read 2048
+client 9 read filish
+[CLIENT]:[9]UPL:[453.256000 ms]RTT:[584.490000 ms]RTTVAR:[243825]
+client have read 1448
+client have read 2048
+client 10 read filish
+[CLIENT]:[10]UPL:[451.532000 ms]RTT:[566.978000 ms]RTTVAR:[217893]
+[CLIENT_FINAL]
+    AverageUPL=[449.115000]
+    AverageRTT=[684.570000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[1748000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=449 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=448 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=506 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=444 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=444 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=462 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=478 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=461 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=462 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=463 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9043ms
+rtt min/avg/max/mdev = 443.711/461.623/506.335/18.001 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:1712 bw1:10 bw2:100 dl1:1ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:1024
+[SERVER]: Server Initialized.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[2197.902000 ms]RTT:[407.901000 ms]RTTVAR:[218325]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[2173.403000 ms]RTT:[383.086000 ms]RTTVAR:[213374]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[2080.565000 ms]RTT:[361.398000 ms]RTTVAR:[203407]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[1448.566000 ms]RTT:[342.479000 ms]RTTVAR:[190393]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[209.336000 ms]RTT:[325.820000 ms]RTTVAR:[176114]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[208.170000 ms]RTT:[311.100000 ms]RTTVAR:[161525]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[209.394000 ms]RTT:[298.371000 ms]RTTVAR:[146601]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[208.571000 ms]RTT:[287.136000 ms]RTTVAR:[132421]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[209.337000 ms]RTT:[277.395000 ms]RTTVAR:[118797]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[209.362000 ms]RTT:[268.879000 ms]RTTVAR:[106131]
+[CLIENT_FINAL]
+    AverageUPL=[915.460000]
+    AverageRTT=[326.356000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[844000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=216 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=210 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=208 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=210 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=208 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=210 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=209 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9008ms
+rtt min/avg/max/mdev = 208.224/209.809/216.327/2.234 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:1712 bw1:10 bw2:100 dl1:1ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:2048
+[SERVER]: Server Initialized.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:2048
+[CLIENT]: Connected.
+client have read 1448
+client have read 2048
+client 1 read filish
+[CLIENT]:[1]UPL:[2375.046000 ms]RTT:[398.068000 ms]RTTVAR:[212448]
+client have read 1448
+client have read 2048
+client 2 read filish
+[CLIENT]:[2]UPL:[2272.339000 ms]RTT:[374.404000 ms]RTTVAR:[206665]
+client have read 1448
+client have read 2048
+client 3 read filish
+[CLIENT]:[3]UPL:[2175.820000 ms]RTT:[353.850000 ms]RTTVAR:[196107]
+client have read 2048
+client 4 read filish
+[CLIENT]:[4]UPL:[1403.575000 ms]RTT:[336.390000 ms]RTTVAR:[182000]
+client have read 2048
+client 5 read filish
+[CLIENT]:[5]UPL:[1373.570000 ms]RTT:[320.837000 ms]RTTVAR:[167606]
+client have read 2048
+client 6 read filish
+[CLIENT]:[6]UPL:[1308.411000 ms]RTT:[306.787000 ms]RTTVAR:[153804]
+client have read 2048
+client 7 read filish
+[CLIENT]:[7]UPL:[1281.195000 ms]RTT:[294.585000 ms]RTTVAR:[139758]
+client have read 2048
+client 8 read filish
+[CLIENT]:[8]UPL:[1215.848000 ms]RTT:[283.922000 ms]RTTVAR:[126144]
+client have read 2048
+client 9 read filish
+[CLIENT]:[9]UPL:[1151.253000 ms]RTT:[274.513000 ms]RTTVAR:[113426]
+client have read 2048
+client 10 read filish
+[CLIENT]:[10]UPL:[1088.841000 ms]RTT:[266.378000 ms]RTTVAR:[101339]
+[CLIENT_FINAL]
+    AverageUPL=[1564.589000]
+    AverageRTT=[320.973000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[816000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=233 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=210 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=221 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=210 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=217 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=218 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=210 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=211 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=209 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9019ms
+rtt min/avg/max/mdev = 208.945/214.782/232.550/7.150 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:1712 bw1:10 bw2:100 dl1:1ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:512 s2c:1024
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:512 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[2194.144000 ms]RTT:[409.136000 ms]RTTVAR:[219067]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[2176.118000 ms]RTT:[384.263000 ms]RTTVAR:[214045]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[2082.418000 ms]RTT:[364.651000 ms]RTTVAR:[199758]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[1447.195000 ms]RTT:[345.392000 ms]RTTVAR:[188337]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[207.986000 ms]RTT:[328.189000 ms]RTTVAR:[175659]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[208.764000 ms]RTT:[313.240000 ms]RTTVAR:[161642]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[208.918000 ms]RTT:[300.184000 ms]RTTVAR:[147344]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[214.993000 ms]RTT:[289.516000 ms]RTTVAR:[131843]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[215.184000 ms]RTT:[280.208000 ms]RTTVAR:[117499]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[215.162000 ms]RTT:[272.060000 ms]RTTVAR:[104421]
+[CLIENT_FINAL]
+    AverageUPL=[917.088000]
+    AverageRTT=[328.683000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[844000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=214 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=211 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=210 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=208 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=208 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=208 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=213 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=210 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9014ms
+rtt min/avg/max/mdev = 208.032/209.985/213.533/1.761 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:1712 bw1:10 bw2:100 dl1:1ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:512 s2c:2048
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:512 s2c:2048
+[CLIENT]: Connected.
+client have read 1448
+client have read 2048
+client 1 read filish
+[CLIENT]:[1]UPL:[2386.152000 ms]RTT:[400.999000 ms]RTTVAR:[214197]
+client have read 1448
+client have read 2048
+client 2 read filish
+[CLIENT]:[2]UPL:[2308.581000 ms]RTT:[377.163000 ms]RTTVAR:[208322]
+client have read 1448
+client have read 2048
+client 3 read filish
+[CLIENT]:[3]UPL:[2202.960000 ms]RTT:[356.267000 ms]RTTVAR:[198032]
+client have read 2048
+client 4 read filish
+[CLIENT]:[4]UPL:[1432.428000 ms]RTT:[337.927000 ms]RTTVAR:[185205]
+client have read 2048
+client 5 read filish
+[CLIENT]:[5]UPL:[1376.078000 ms]RTT:[321.902000 ms]RTTVAR:[170954]
+client have read 2048
+client 6 read filish
+[CLIENT]:[6]UPL:[1357.240000 ms]RTT:[309.128000 ms]RTTVAR:[153762]
+client have read 2048
+client 7 read filish
+[CLIENT]:[7]UPL:[1266.376000 ms]RTT:[296.684000 ms]RTTVAR:[140210]
+client have read 2048
+client 8 read filish
+[CLIENT]:[8]UPL:[1214.468000 ms]RTT:[285.637000 ms]RTTVAR:[127251]
+client have read 2048
+client 9 read filish
+[CLIENT]:[9]UPL:[1153.970000 ms]RTT:[276.141000 ms]RTTVAR:[114430]
+client have read 2048
+client 10 read filish
+[CLIENT]:[10]UPL:[1118.810000 ms]RTT:[267.722000 ms]RTTVAR:[102662]
+[CLIENT_FINAL]
+    AverageUPL=[1581.706000]
+    AverageRTT=[322.957000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[824000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=214 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=208 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=221 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=209 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=222 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=220 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=218 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9026ms
+rtt min/avg/max/mdev = 208.280/213.922/221.660/5.453 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:3424 bw1:10 bw2:100 dl1:1ms dl2:200ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:1024
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[4397.364000 ms]RTT:[777.407000 ms]RTTVAR:[415095]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[4352.850000 ms]RTT:[731.267000 ms]RTTVAR:[403601]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[4031.063000 ms]RTT:[691.125000 ms]RTTVAR:[382984]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[2948.509000 ms]RTT:[662.768000 ms]RTTVAR:[343954]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[408.060000 ms]RTT:[630.920000 ms]RTTVAR:[321660]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[443.818000 ms]RTT:[607.520000 ms]RTTVAR:[288045]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[412.610000 ms]RTT:[583.146000 ms]RTTVAR:[264782]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[410.875000 ms]RTT:[561.554000 ms]RTTVAR:[241771]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[408.342000 ms]RTT:[542.391000 ms]RTTVAR:[219654]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[453.104000 ms]RTT:[531.218000 ms]RTTVAR:[187087]
+[CLIENT_FINAL]
+    AverageUPL=[1826.659000]
+    AverageRTT=[631.931000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[1576000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=418 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=410 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=407 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=410 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=411 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=409 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9010ms
+rtt min/avg/max/mdev = 407.242/409.964/417.786/2.796 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:3424 bw1:10 bw2:100 dl1:1ms dl2:200ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:2048
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:2048
+[CLIENT]: Connected.
+client have read 1448
+client have read 2048
+client 1 read filish
+[CLIENT]:[1]UPL:[4740.866000 ms]RTT:[772.361000 ms]RTTVAR:[412201]
+client have read 1448
+client have read 2048
+client 2 read filish
+[CLIENT]:[2]UPL:[4482.311000 ms]RTT:[726.916000 ms]RTTVAR:[400040]
+client have read 1448
+client have read 2048
+client 3 read filish
+[CLIENT]:[3]UPL:[4448.364000 ms]RTT:[689.009000 ms]RTTVAR:[375844]
+client have read 1448
+client have read 2048
+client 4 read filish
+[CLIENT]:[4]UPL:[2942.731000 ms]RTT:[654.334000 ms]RTTVAR:[351233]
+client have read 1448
+client have read 2048
+client 5 read filish
+[CLIENT]:[5]UPL:[2809.994000 ms]RTT:[623.412000 ms]RTTVAR:[325268]
+client have read 1448
+client have read 2048
+client 6 read filish
+[CLIENT]:[6]UPL:[2563.071000 ms]RTT:[596.686000 ms]RTTVAR:[297404]
+client have read 1448
+client have read 2048
+client 7 read filish
+[CLIENT]:[7]UPL:[2571.183000 ms]RTT:[574.410000 ms]RTTVAR:[267604]
+client have read 1448
+client have read 2048
+client 8 read filish
+[CLIENT]:[8]UPL:[2329.590000 ms]RTT:[553.969000 ms]RTTVAR:[241585]
+client have read 1448
+client have read 2048
+client 9 read filish
+[CLIENT]:[9]UPL:[2235.515000 ms]RTT:[535.781000 ms]RTTVAR:[217565]
+client have read 1448
+client have read 2048
+client 10 read filish
+[CLIENT]:[10]UPL:[2111.227000 ms]RTT:[519.894000 ms]RTTVAR:[194948]
+[CLIENT_FINAL]
+    AverageUPL=[3123.485000]
+    AverageRTT=[624.677000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[1576000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=412 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=411 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=410 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=410 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=407 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9010ms
+rtt min/avg/max/mdev = 407.102/409.279/411.937/1.378 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:3424 bw1:10 bw2:100 dl1:1ms dl2:200ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:512 s2c:1024
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:512 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[4230.539000 ms]RTT:[777.823000 ms]RTTVAR:[415519]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[4331.319000 ms]RTT:[731.760000 ms]RTTVAR:[403765]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[3996.002000 ms]RTT:[691.524000 ms]RTTVAR:[383296]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[2923.856000 ms]RTT:[656.074000 ms]RTTVAR:[358372]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[408.204000 ms]RTT:[625.079000 ms]RTTVAR:[330770]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[408.792000 ms]RTT:[598.034000 ms]RTTVAR:[302168]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[417.434000 ms]RTT:[575.443000 ms]RTTVAR:[271807]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[410.292000 ms]RTT:[554.780000 ms]RTTVAR:[245182]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[409.313000 ms]RTT:[536.584000 ms]RTTVAR:[220278]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[409.449000 ms]RTT:[520.676000 ms]RTTVAR:[197025]
+[CLIENT_FINAL]
+    AverageUPL=[1794.520000]
+    AverageRTT=[626.777000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[1592000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=418 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=413 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=407 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=413 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=420 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9014ms
+rtt min/avg/max/mdev = 407.377/411.549/419.736/4.101 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:1 bf2:3424 bw1:10 bw2:100 dl1:1ms dl2:200ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:512 s2c:2048
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:512 s2c:2048
+[CLIENT]: Connected.
+client have read 1448
+client have read 2048
+client 1 read filish
+[CLIENT]:[1]UPL:[4717.128000 ms]RTT:[791.339000 ms]RTTVAR:[423330]
+client have read 1448
+client have read 2048
+client 2 read filish
+[CLIENT]:[2]UPL:[4544.772000 ms]RTT:[744.052000 ms]RTTVAR:[412073]
+client have read 1448
+client have read 2048
+client 3 read filish
+[CLIENT]:[3]UPL:[4531.254000 ms]RTT:[711.155000 ms]RTTVAR:[374848]
+client have read 1448
+client have read 2048
+client 4 read filish
+[CLIENT]:[4]UPL:[2823.976000 ms]RTT:[673.346000 ms]RTTVAR:[356753]
+client have read 1448
+client have read 2048
+client 5 read filish
+[CLIENT]:[5]UPL:[2816.723000 ms]RTT:[640.210000 ms]RTTVAR:[333837]
+client have read 1448
+client have read 2048
+client 6 read filish
+[CLIENT]:[6]UPL:[2816.211000 ms]RTT:[611.382000 ms]RTTVAR:[308034]
+client have read 1448
+client have read 2048
+client 7 read filish
+[CLIENT]:[7]UPL:[2563.095000 ms]RTT:[586.664000 ms]RTTVAR:[280461]
+client have read 1448
+client have read 2048
+client 8 read filish
+[CLIENT]:[8]UPL:[2409.030000 ms]RTT:[565.844000 ms]RTTVAR:[251987]
+client have read 1448
+client have read 2048
+client 9 read filish
+[CLIENT]:[9]UPL:[2302.307000 ms]RTT:[548.021000 ms]RTTVAR:[224636]
+client have read 1448
+client have read 2048
+client 10 read filish
+[CLIENT]:[10]UPL:[2263.344000 ms]RTT:[532.670000 ms]RTTVAR:[199178]
+[CLIENT_FINAL]
+    AverageUPL=[3178.784000]
+    AverageRTT=[640.468000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[1620000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=418 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=408 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=550 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=447 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=445 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=416 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=409 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=420 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9012ms
+rtt min/avg/max/mdev = 407.812/433.005/549.983/41.329 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:17 bf2:1712 bw1:10 bw2:100 dl1:10ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:1024
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[247.892000 ms]RTT:[467.525000 ms]RTTVAR:[249517]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[245.676000 ms]RTT:[439.785000 ms]RTTVAR:[242619]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[244.224000 ms]RTT:[415.321000 ms]RTTVAR:[230892]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[244.400000 ms]RTT:[393.926000 ms]RTTVAR:[215958]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[244.556000 ms]RTT:[375.231000 ms]RTTVAR:[199359]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[245.938000 ms]RTT:[359.041000 ms]RTTVAR:[181900]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[245.454000 ms]RTT:[344.823000 ms]RTTVAR:[164861]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[244.181000 ms]RTT:[332.231000 ms]RTTVAR:[148829]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[244.088000 ms]RTT:[321.198000 ms]RTTVAR:[133689]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[245.184000 ms]RTT:[311.680000 ms]RTTVAR:[119302]
+[CLIENT_FINAL]
+    AverageUPL=[245.159000]
+    AverageRTT=[376.076000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[960000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=256 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=250 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=247 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=245 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=249 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=243 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=251 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=245 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=246 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=254 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9018ms
+rtt min/avg/max/mdev = 242.891/248.546/256.166/3.951 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:17 bf2:1712 bw1:10 bw2:100 dl1:10ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:128 s2c:2048
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:128 s2c:2048
+[CLIENT]: Connected.
+client have read 2048
+client 1 read filish
+[CLIENT]:[1]UPL:[245.243000 ms]RTT:[465.573000 ms]RTTVAR:[248638]
+client have read 2048
+client 2 read filish
+[CLIENT]:[2]UPL:[246.222000 ms]RTT:[438.140000 ms]RTTVAR:[241346]
+client have read 2048
+client 3 read filish
+[CLIENT]:[3]UPL:[246.355000 ms]RTT:[414.149000 ms]RTTVAR:[228990]
+client have read 2048
+client 4 read filish
+[CLIENT]:[4]UPL:[249.317000 ms]RTT:[393.529000 ms]RTTVAR:[212984]
+client have read 2048
+client 5 read filish
+[CLIENT]:[5]UPL:[251.310000 ms]RTT:[375.734000 ms]RTTVAR:[195326]
+client have read 2048
+client 6 read filish
+[CLIENT]:[6]UPL:[244.624000 ms]RTT:[359.328000 ms]RTTVAR:[179307]
+client have read 2048
+client 7 read filish
+[CLIENT]:[7]UPL:[247.839000 ms]RTT:[345.382000 ms]RTTVAR:[162373]
+client have read 2048
+client 8 read filish
+[CLIENT]:[8]UPL:[243.367000 ms]RTT:[332.620000 ms]RTTVAR:[147304]
+client have read 2048
+client 9 read filish
+[CLIENT]:[9]UPL:[243.551000 ms]RTT:[321.442000 ms]RTTVAR:[132834]
+client have read 2048
+client 10 read filish
+[CLIENT]:[10]UPL:[243.438000 ms]RTT:[311.679000 ms]RTTVAR:[119151]
+[CLIENT_FINAL]
+    AverageUPL=[246.126000]
+    AverageRTT=[375.757000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[956000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=252 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=254 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=248 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=245 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=245 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=246 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=248 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=244 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=245 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=268 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9030ms
+rtt min/avg/max/mdev = 243.705/249.430/267.927/6.901 ms
+=====End This Test=====
+
+
+
+=====Start a Test=====
+[MININET:] bf1:17 bf2:1712 bw1:10 bw2:100 dl1:10ms dl2:100ms
+[SERVER]: Server Started.
+[SERVER]: Parameters: Port:6666 c2s:512 s2c:1024
+[SERVER]: Server Initialized.
+[SERVER]: Bind Succed.
+[CLIENT]: Parameters: IP:10.0.0.2 Port:6666 COUNT:10 c2s:512 s2c:1024
+[CLIENT]: Connected.
+client have read 1024
+client 1 read filish
+[CLIENT]:[1]UPL:[262.771000 ms]RTT:[465.228000 ms]RTTVAR:[243196]
+client have read 1024
+client 2 read filish
+[CLIENT]:[2]UPL:[257.509000 ms]RTT:[439.230000 ms]RTTVAR:[234393]
+client have read 1024
+client 3 read filish
+[CLIENT]:[3]UPL:[245.484000 ms]RTT:[414.994000 ms]RTTVAR:[224268]
+client have read 1024
+client 4 read filish
+[CLIENT]:[4]UPL:[242.899000 ms]RTT:[393.467000 ms]RTTVAR:[211254]
+client have read 1024
+client 5 read filish
+[CLIENT]:[5]UPL:[245.928000 ms]RTT:[375.013000 ms]RTTVAR:[195349]
+client have read 1024
+client 6 read filish
+[CLIENT]:[6]UPL:[244.486000 ms]RTT:[358.684000 ms]RTTVAR:[179170]
+client have read 1024
+client 7 read filish
+[CLIENT]:[7]UPL:[246.630000 ms]RTT:[344.663000 ms]RTTVAR:[162419]
+client have read 1024
+client 8 read filish
+[CLIENT]:[8]UPL:[248.201000 ms]RTT:[332.596000 ms]RTTVAR:[145949]
+client have read 1024
+client 9 read filish
+[CLIENT]:[9]UPL:[243.989000 ms]RTT:[321.505000 ms]RTTVAR:[131643]
+client have read 1024
+client 10 read filish
+[CLIENT]:[10]UPL:[252.194000 ms]RTT:[312.823000 ms]RTTVAR:[116095]
+[CLIENT_FINAL]
+    AverageUPL=[249.009000]
+    AverageRTT=[375.820000]
+    tcpi_retransmits=[0]
+    tcpi_rto=[948000]
+    tcpi_lost=[0]
+    tcpi_retrans=[0]
+    tcpi_snd_cwnd=[18]
+    tcpi_snd_ssthresh=[2147483647]
+    tcpi_total_retrans=[0]
