@@ -59,31 +59,20 @@ def setCUBIC():
     os.system("echo 'net.ipv4.tcp_congestion_control=cubic' >> /etc/sysctl.conf")
     os.system("sysctl -p")
 class MyTopo( Topo ): 
-    '''
-    def __init__(self,cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2):
-        super().__init__()
-        self.cca=cca
-        self.buffer1=buffer1
-        self.buffer2=buffer2
-        self.bandwidth1=bandwidth1
-        self.bandwidth2=bandwidth2
-        self.latency1=latency1
-        self.latency2=latency2
-    '''
     def build( self ):
         s1 = self.addSwitch('s1')
         s2 = self.addSwitch('s2')
 
         h1 = self.addHost('h1')
         h2 = self.addHost('h2')
-
         global bw1
         global bw2
         global dl1
         global dl2
         global bf1
         global bf2
-
+        print("bf1:"+str(bf1)+" bf2:"+str(bf2)+" bw1:"+str(bw1)+" bw2:"+str(bw2)+" dl1:"+str(dl1)+" dl2:"+str(dl2))
+        file.write("[MININET:] bf1:"+str(bf1)+" bf2:"+str(bf2)+" bw1:"+str(bw1)+" bw2:"+str(bw2)+" dl1:"+str(dl1)+" dl2:"+str(dl2)+"\n")
         self.addLink(h1,s1, cls=TCLink, bw=bw1, delay=dl1, max_queue_size=bf1, loss=0, use_htb=True, use_fq=True)
         self.addLink(s1,s2, cls=TCLink, bw=bw2, delay=dl2, max_queue_size=bf2, loss=0, use_htb=True, use_fq=True)
         self.addLink(s2,h2, cls=TCLink, bw=bw1, delay=dl1, max_queue_size=bf1, loss=0, use_htb=True, use_fq=True)
@@ -96,14 +85,12 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2):
         setBBR()
     elif cca == "CUBIC":
         setCUBIC()
-    
     global bw1
     global bw2
     global dl1
     global dl2
     global bf1
     global bf2
-
     #bandwidth unit: mb/s
     bw1=bandwidth1
     bw2=bandwidth2
@@ -113,8 +100,7 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2):
     #buffer unit: packet
     bf1 = int(2*buffer1*bw1*latency1*1000/8/1460)
     bf2 = int(2*buffer2*bw2*latency2*1000/8/1460)
-    print("bf1:"+str(bf1)+" bf2:"+str(bf2)+" bw1:"+str(bw1)+" bw2:"+str(bw2)+" dl1:"+str(dl1)+" dl2:"+str(dl2))
-    file.write("[MININET:] bf1:"+str(bf1)+" bf2:"+str(bf2)+" bw1:"+str(bw1)+" bw2:"+str(bw2)+" dl1:"+str(dl1)+" dl2:"+str(dl2)+"\n")
+
 
     topo = MyTopo()
     net = Mininet(topo=topo, link=TCLink)
@@ -131,20 +117,12 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2):
 
 
 def main():
-    for cca in TCPCCAs:
-        for bf1 in BUFFER1:
-            for bf2 in BUFFER2:
-                for bw1 in BANDWIDTH1:
-                    for bw2 in BANDWIDTH2:
-                        for dl1 in LATENCY1:
-                            for dl2 in LATENCY2:
-                                print("=====Start a Test=====")
-                                file.write("=====Start a Test=====\n")
-                                print(cca,bf1,bf2,bw1,bw2,dl1,dl2)
-                                onetest(cca,bf1,bf2,bw1,bw2,dl1,dl2)
-                                print("=====End This Test=====")
-                                file.write("=====End This Test=====\n\n\n\n")
-                                file.flush()
+    print("=====Start a Test=====")
+    file.write("=====Start a Test=====\n")
+    onetest("BBR",1,1,10,100,10,100)
+    print("=====End This Test=====")
+    file.write("=====End This Test=====\n\n\n\n")
+    file.flush()
 
 if __name__ == '__main__':
     main()

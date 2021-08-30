@@ -82,12 +82,14 @@ int main(int argc, char** argv)
         UPL = 1000000*(EndTime.tv_sec-StartTime.tv_sec)+(EndTime.tv_usec-StartTime.tv_usec);
         UPLSum += UPL;
 
-        printf("[CLIENT]:[%d]UPL:[%ld us]RTT:[%u us]RTTVAR:[%u]\n", cnt+1, UPL, RTT, RTTVAR);
+        printf("[CLIENT]:[%d]UPL:[%lf ms]RTT:[%lf ms]RTTVAR:[%u]\n", cnt+1, UPL/1000.0, RTT/1000.0, RTTVAR);
     }
     
+    close(MySocket);
+
     double av_RTT, av_UPL;
-    av_RTT = 1.0*RTTSum/COUNT;
-    av_UPL = 1.0*UPLSum/COUNT;
+    av_RTT = RTTSum/COUNT/1000.0;
+    av_UPL = UPLSum/COUNT/1000.0;
 
     unsigned char tcpi_retransmits;
     unsigned int tcpi_rto,tcpi_lost,tcpi_retrans,tcpi_snd_cwnd,tcpi_snd_ssthresh,tcpi_total_retrans;
