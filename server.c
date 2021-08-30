@@ -58,6 +58,7 @@ int main(int argc, char** argv)
         int c2s=0;
         while(c2s<SIZEc2s){
             c2s+=read (ResponseSocket, RBuffer, SIZEc2s);
+            printf("serber have read %d\n",c2s);
         }
         printf("server %d read filish\n",cnt+1);
         write(ResponseSocket, WBuffer, SIZEs2c);

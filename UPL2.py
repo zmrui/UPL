@@ -114,6 +114,8 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
     print("bf1:"+str(bf1)+" bf2:"+str(bf2)+" bw1:"+str(bw1)+" bw2:"+str(bw2)+" dl1:"+str(dl1)+" dl2:"+str(dl2))
     file.write("[MININET:] bf1:"+str(bf1)+" bf2:"+str(bf2)+" bw1:"+str(bw1)+" bw2:"+str(bw2)+" dl1:"+str(dl1)+" dl2:"+str(dl2)+"\n")
 
+    print("2(dl1+dl2+dl1)=%d ms"%int(2*latency2+4*latency1))
+
     topo = MyTopo()
     net = Mininet(topo=topo, link=TCLink)
     net.start()

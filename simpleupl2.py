@@ -5,12 +5,12 @@ from mininet.link import TCLink
 import os
 
 PORT = 6666
-SIZE_C2S = 512
-SIZE_S2C = 1024
+SIZE_C2S = 2048
+SIZE_S2C = 8192
 COUNT = 10
 CLIENT_CMD1="./client " 
 CLIENT_CMD2=" %d %d %d %d"%(PORT,COUNT,SIZE_C2S,SIZE_S2C)
-SERVER_CMD="./server %d %d %d &"%(PORT,SIZE_C2S,SIZE_S2C)
+SERVER_CMD="./server %d %d %d %d &"%(PORT,COUNT,SIZE_C2S,SIZE_S2C)
 #Matrix full
 #Buffer=(rate)*2*(latency)/1000*Bandwidth Example: 1 = 1 * 2 * 100/1000 * 100Mbps = 20Mb = 2.5 MB
 #Bandwidth Mb/s Example: 100 = 100Mb/s
@@ -101,6 +101,7 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2):
     bf1 = int(2*buffer1*bw1*latency1*1000/8/1460)
     bf2 = int(2*buffer2*bw2*latency2*1000/8/1460)
 
+    print("2(dl1+dl2+dl1)=%d ms"%int(2*latency2+4*latency1))
 
     topo = MyTopo()
     net = Mininet(topo=topo, link=TCLink)
