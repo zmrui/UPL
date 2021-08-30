@@ -121,7 +121,7 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
     h2 = net.get('h2')
     CLIENT_CMD1="./client " 
     CLIENT_CMD2=" %d %d %d %d"%(PORT,COUNT,cs,sc)
-    SERVER_CMD="./server %d %d %d &"%(PORT,cs,sc)
+    SERVER_CMD="./server %d %d %d %d &"%(PORT,COUNT,cs,sc)
     result = h2.cmd(SERVER_CMD)
     print(result)
     file.write(result)

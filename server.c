@@ -11,15 +11,16 @@ int main(int argc, char** argv)
 {
     printf("[SERVER]: Server Started.\n");
     int PORT;
-    int SIZEc2s, SIZEs2c;
-    if (argc != 4){
-        printf("server [PORT] [SIZEc2s] [SIZEs2c]\nExample: ./server 80 1024 2048\n");
+    int SIZEc2s, SIZEs2c,COUNT;
+    if (argc != 5){
+        printf("server [PORT] [COUNT] [SIZEc2s] [SIZEs2c]\nExample: ./server 80 5 1024 2048\n");
         return 0;
     }
     else{
         PORT = atoi(argv[1]);
-        SIZEc2s = atoi(argv[2]);
-        SIZEs2c = atoi(argv[3]);
+        COUNT = atoi(argv[2]);
+        SIZEc2s = atoi(argv[3]);
+        SIZEs2c = atoi(argv[4]);
         printf("[SERVER]: Parameters: Port:%d c2s:%d s2c:%d\n",PORT,SIZEc2s,SIZEs2c);
     }
 
@@ -53,9 +54,16 @@ int main(int argc, char** argv)
 
 
     int cnt = 0;
-    while(1){
-        read (ResponseSocket, RBuffer, SIZEc2s);
+    for(cnt=0;cnt<COUNT;cnt++){
+        int c2s=0;
+        while(c2s<SIZEc2s){
+            c2s+=read (ResponseSocket, RBuffer, SIZEc2s);
+        }
+        printf("server %d read filish\n",cnt+1);
         write(ResponseSocket, WBuffer, SIZEs2c);
     }
+
+    close(ResponseSocket);
+    close(ListenSocket);
     return 0;
 }

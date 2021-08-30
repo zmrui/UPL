@@ -5,12 +5,12 @@ from mininet.link import TCLink
 import os
 
 PORT = 6666
-SIZE_C2S = 512
-SIZE_S2C = 1024
+SIZE_C2S = 2048
+SIZE_S2C = 2048
 COUNT = 10
 CLIENT_CMD1="./client " 
 CLIENT_CMD2=" %d %d %d %d"%(PORT,COUNT,SIZE_C2S,SIZE_S2C)
-SERVER_CMD="./server %d %d %d &"%(PORT,SIZE_C2S,SIZE_S2C)
+SERVER_CMD="./server %d %d %d %d &"%(PORT,COUNT,SIZE_C2S,SIZE_S2C)
 
 
 class MyTopo( Topo ): 

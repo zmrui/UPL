@@ -63,13 +63,18 @@ int main(int argc, char** argv)
     long UPL = 0;
 
     int cnt = 0;
+    
     for(cnt = 0; cnt < COUNT; cnt++){
         gettimeofday(&StartTime, NULL);
 
         write(MySocket,WBuffer,SIZEc2s);
 
-        read (MySocket,RBuffer,SIZEs2c);
-
+        int s2c=0;
+        while(s2c<SIZEs2c){
+            s2c += read (MySocket,RBuffer,SIZEs2c);
+            printf("client have read %d\n",s2c);
+        }
+        printf("client %d read filish\n",cnt+1);
         gettimeofday(&EndTime, NULL);
 
         getsockopt(MySocket, SOL_TCP, TCP_INFO, &TCPInfo, &tcp_info_length);
