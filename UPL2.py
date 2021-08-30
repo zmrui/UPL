@@ -5,12 +5,10 @@ from mininet.link import TCLink
 import os
 
 PORT = 6666
-SIZE_C2S = 512
-SIZE_S2C = 1024
+SIZE_C2S = [128,512]
+SIZE_S2C = [1024,2048]
 COUNT = 10
-CLIENT_CMD1="./client " 
-CLIENT_CMD2=" %d %d %d %d"%(PORT,COUNT,SIZE_C2S,SIZE_S2C)
-SERVER_CMD="./server %d %d %d &"%(PORT,SIZE_C2S,SIZE_S2C)
+
 #Matrix full
 #Buffer=(rate)*2*(latency)/1000*Bandwidth Example: 1 = 1 * 2 * 100/1000 * 100Mbps = 20Mb = 2.5 MB
 #Bandwidth Mb/s Example: 100 = 100Mb/s
@@ -89,7 +87,7 @@ class MyTopo( Topo ):
         self.addLink(s2,h2, cls=TCLink, bw=bw1, delay=dl1, max_queue_size=bf1, loss=0, use_htb=True, use_fq=True)
 
 
-def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2):
+def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
 
     os.system("sudo mn -c >/dev/null")
     if cca == "BBR":
@@ -121,10 +119,16 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2):
     net.start()
     h1 = net.get('h1')	
     h2 = net.get('h2')
+    CLIENT_CMD1="./client " 
+    CLIENT_CMD2=" %d %d %d %d"%(PORT,COUNT,cs,sc)
+    SERVER_CMD="./server %d %d %d &"%(PORT,cs,sc)
     result = h2.cmd(SERVER_CMD)
     print(result)
     file.write(result)
     result = h1.cmd(CLIENT_CMD1+str(h2.IP())+CLIENT_CMD2)
+    print(result)	
+    file.write(result)
+    result = h1.cmd("ping "+str(h2.IP())+" -c 10")
     print(result)	
     file.write(result)
     net.stop()
@@ -138,13 +142,15 @@ def main():
                     for bw2 in BANDWIDTH2:
                         for dl1 in LATENCY1:
                             for dl2 in LATENCY2:
-                                print("=====Start a Test=====")
-                                file.write("=====Start a Test=====\n")
-                                print(cca,bf1,bf2,bw1,bw2,dl1,dl2)
-                                onetest(cca,bf1,bf2,bw1,bw2,dl1,dl2)
-                                print("=====End This Test=====")
-                                file.write("=====End This Test=====\n\n\n\n")
-                                file.flush()
+                                for c2s in SIZE_C2S:
+                                    for s2c in SIZE_S2C:
+                                        print("=====Start a Test=====")
+                                        file.write("=====Start a Test=====\n")
+                                        print(cca,bf1,bf2,bw1,bw2,dl1,dl2)
+                                        onetest(cca,bf1,bf2,bw1,bw2,dl1,dl2,c2s,s2c)
+                                        print("=====End This Test=====")
+                                        file.write("=====End This Test=====\n\n\n\n")
+                                        file.flush()
 
 if __name__ == '__main__':
     main()
