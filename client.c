@@ -93,8 +93,8 @@ int main(int argc, char** argv)
     close(MySocket);
 
     double av_RTT, av_UPL;
-    av_RTT = RTTSum/COUNT/1000.0;
-    av_UPL = UPLSum/COUNT/1000.0;
+    av_RTT = RTTSum/(COUNT-100)/1000.0;
+    av_UPL = UPLSum/(COUNT-100)/1000.0;
 
     unsigned char tcpi_retransmits;
     unsigned int tcpi_rto,tcpi_lost,tcpi_retrans,tcpi_snd_cwnd,tcpi_snd_ssthresh,tcpi_total_retrans;

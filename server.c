@@ -21,7 +21,7 @@ int main(int argc, char** argv)
         COUNT = atoi(argv[2]);
         SIZEc2s = atoi(argv[3]);
         SIZEs2c = atoi(argv[4]);
-        printf("[SERVER]: Parameters: Port:%d c2s:%d s2c:%d\n",PORT,SIZEc2s,SIZEs2c);
+        //printf("[SERVER]: Parameters: Port:%d c2s:%d s2c:%d\n",PORT,SIZEc2s,SIZEs2c);
     }
 
     struct sockaddr_in SERVER, CLIENT;
@@ -31,7 +31,7 @@ int main(int argc, char** argv)
     SERVER.sin_family = AF_INET;
 
     char WBuffer[102400], RBuffer[102400]; memset(WBuffer,2,sizeof(WBuffer));
-    printf("[SERVER]: Server Initialized.\n");
+    //printf("[SERVER]: Server Initialized.\n");
     int ListenSocket, ResponseSocket;
     socklen_t CLIENT_LEN;
     ListenSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
@@ -39,13 +39,14 @@ int main(int argc, char** argv)
         printf("[SERVER]: bind failed.\n");
         exit(1);
     }
-    printf("[SERVER]: Bind Succed.\n");
+//    printf("[SERVER]: Bind Succed.\n");
 
     listen(ListenSocket,5);
     CLIENT_LEN = sizeof(CLIENT);
     ResponseSocket=accept(ListenSocket, (struct sockaddr*) &CLIENT, &CLIENT_LEN);
     if(ResponseSocket>0){
-        printf("[SERVER]: Socket to client established.\n");
+        //printf("[SERVER]: Socket to client established.\n");
+        ;
     }
     else{
         printf("[SERVER]: Failed to establish socket to client.\n");
@@ -58,9 +59,7 @@ int main(int argc, char** argv)
         int c2s=0;
         while(c2s<SIZEc2s){
             c2s+=read (ResponseSocket, RBuffer, SIZEc2s);
-            printf("serber have read %d\n",c2s);
         }
-        printf("server %d read filish\n",cnt+1);
         write(ResponseSocket, WBuffer, SIZEs2c);
     }
 

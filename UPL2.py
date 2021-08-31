@@ -112,7 +112,7 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
     bf1 = int(2*buffer1*bw1*latency1*1000/8/1460)
     bf2 = int(2*buffer2*bw2*latency2*1000/8/1460)
     print("bf1:"+str(bf1)+" bf2:"+str(bf2)+" bw1:"+str(bw1)+" bw2:"+str(bw2)+" dl1:"+str(dl1)+" dl2:"+str(dl2))
-    file.write("[MININET:] bf1:"+str(bf1)+" bf2:"+str(bf2)+" bw1:"+str(bw1)+" bw2:"+str(bw2)+" dl1:"+str(dl1)+" dl2:"+str(dl2)+"\n")
+    file.write("[MININET:] cca:"+ cca +" bf1:"+str(bf1)+" bf2:"+str(bf2)+" bw1:"+str(bw1)+" bw2:"+str(bw2)+" dl1:"+str(dl1)+" dl2:"+str(dl2)+"\n")
 
     print("2(dl1+dl2+dl1)=%d ms"%int(2*latency2+4*latency1))
 
@@ -130,7 +130,7 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
     result = h1.cmd(CLIENT_CMD1+str(h2.IP())+CLIENT_CMD2)
     print(result)	
     file.write(result)
-    result = h1.cmd("ping "+str(h2.IP())+" -c 200")
+    result = h1.cmd("ping "+str(h2.IP())+" -c 20")
     print(result)	
     file.write(result)
     net.stop()
