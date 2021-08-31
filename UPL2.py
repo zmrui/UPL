@@ -7,7 +7,7 @@ import os
 PORT = 6666
 SIZE_C2S = [128,512]
 SIZE_S2C = [1024,2048]
-COUNT = 10
+COUNT = 200
 
 #Matrix full
 #Buffer=(rate)*2*(latency)/1000*Bandwidth Example: 1 = 1 * 2 * 100/1000 * 100Mbps = 20Mb = 2.5 MB
@@ -130,7 +130,7 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
     result = h1.cmd(CLIENT_CMD1+str(h2.IP())+CLIENT_CMD2)
     print(result)	
     file.write(result)
-    result = h1.cmd("ping "+str(h2.IP())+" -c 10")
+    result = h1.cmd("ping "+str(h2.IP())+" -c 200")
     print(result)	
     file.write(result)
     net.stop()

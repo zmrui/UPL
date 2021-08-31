@@ -22,7 +22,7 @@ int main(int argc, char** argv)
     int SIZEc2s, SIZEs2c;
     struct timeval StartTime, EndTime;
     if (argc != 6 ){
-        printf("client [IP ADDRESS] [PORT] [COUNT] [SIZEc2s] [SIZEs2c] \nExample: ./client 10.10.10.1 80 2 1024 2048\n");
+        printf("client [IP ADDRESS] [PORT] [COUNT] [SIZEc2s] [SIZEs2c] \nCOUNT>200\nExample: ./client 10.10.10.1 80 2 1024 2048\n");
         return 0;
     }
     else{
@@ -31,7 +31,7 @@ int main(int argc, char** argv)
         COUNT = atoi(argv[3]);
         SIZEc2s = atoi(argv[4]);
         SIZEs2c = atoi(argv[5]);
-        printf("[CLIENT]: Parameters: IP:%s Port:%d COUNT:%d c2s:%d s2c:%d\n",IPADDR, PORT, COUNT, SIZEc2s, SIZEs2c);
+        //printf("[CLIENT]: Parameters: IP:%s Port:%d COUNT:%d c2s:%d s2c:%d\n",IPADDR, PORT, COUNT, SIZEc2s, SIZEs2c);
     }
 
     struct sockaddr_in SERVER;
@@ -49,7 +49,7 @@ int main(int argc, char** argv)
         printf("[CLIENT]: %d Connect failed.\n",connect(MySocket,(struct sockaddr*) &SERVER, sizeof(SERVER)));
         exit(1);
     }
-    printf("[CLIENT]: Connected.\n");
+    //printf("[CLIENT]: Connected.\n");
 
 
     struct tcp_info TCPInfo;
@@ -72,22 +72,22 @@ int main(int argc, char** argv)
         int s2c=0;
         while(s2c<SIZEs2c){
             s2c += read (MySocket,RBuffer,SIZEs2c);
-            printf("client have read %d\n",s2c);
         }
-        printf("client %d read filish\n",cnt+1);
         gettimeofday(&EndTime, NULL);
 
         getsockopt(MySocket, SOL_TCP, TCP_INFO, &TCPInfo, &tcp_info_length);
-
-        RTT = TCPInfo.tcpi_rtt;
-        RTTVAR = TCPInfo.tcpi_rttvar;
-
-        RTTSum += RTT;
         
-        UPL = 1000000*(EndTime.tv_sec-StartTime.tv_sec)+(EndTime.tv_usec-StartTime.tv_usec);
-        UPLSum += UPL;
+        if(cnt>=100){
+            RTT = TCPInfo.tcpi_rtt;
+            RTTVAR = TCPInfo.tcpi_rttvar;
 
-        printf("[CLIENT]:[%d]UPL:[%lf ms]RTT:[%lf ms]RTTVAR:[%u]\n", cnt+1, UPL/1000.0, RTT/1000.0, RTTVAR);
+            RTTSum += RTT;
+            
+            UPL = 1000000*(EndTime.tv_sec-StartTime.tv_sec)+(EndTime.tv_usec-StartTime.tv_usec);
+            UPLSum += UPL;
+
+            printf("[CLIENT]:[%d]UPL:[%lf ms]RTT:[%lf ms]RTTVAR:[%u]\n", cnt+1, UPL/1000.0, RTT/1000.0, RTTVAR);
+        }
     }
     
     close(MySocket);
