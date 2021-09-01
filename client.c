@@ -87,7 +87,8 @@ int main(int argc, char** argv)
             UPL = 1000000*(EndTime.tv_sec-StartTime.tv_sec)+(EndTime.tv_usec-StartTime.tv_usec);
             UPLSum += UPL;
 
-            printf("[CLIENT]:[%d]UPL:[%lf ms]RTT:[%lf ms]RTTVAR:[%u]\n", cnt+1, UPL/1000.0, RTT/1000.0, RTTVAR);
+            printf("%d %lf %lf %u\n", cnt+1, UPL/1000.0, RTT/1000.0, RTTVAR);
+//          printf("[CLIENT]:[%d]UPL:[%lf ms]RTT:[%lf ms]RTTVAR:[%u]\n", cnt+1, UPL/1000.0, RTT/1000.0, RTTVAR);
         }
     }
 
@@ -102,7 +103,7 @@ int main(int argc, char** argv)
     double throughput;
     throughput = COUNT*SIZEc2s/((FinishTime.tv_sec-BeginTime.tv_sec)+(FinishTime.tv_usec-BeginTime.tv_usec)/1000000.0);
 
-    printf("[CLIENT_FINAL]: Throughput=[%lf] Byte/s\n",throughput);
+    printf("[CLIENT_FINAL]:\nClient Throughput=[%lf] Byte/s\n",throughput);
 
     unsigned char tcpi_retransmits;
     unsigned int tcpi_rto,tcpi_lost,tcpi_retrans,tcpi_snd_cwnd,tcpi_snd_ssthresh,tcpi_total_retrans;
@@ -117,15 +118,15 @@ int main(int argc, char** argv)
 
 
     
-    printf("[CLIENT_FINAL]: AverageUPL=[%lf]\n\
-    [CLIENT_FINAL]: AverageRTT=[%lf]\n\
-    [CLIENT_FINAL]: tcpi_retransmits=[%d]\n\
-    [CLIENT_FINAL]: tcpi_rto=[%u]\n\
-    [CLIENT_FINAL]: tcpi_lost=[%u]\n\
-    [CLIENT_FINAL]: tcpi_retrans=[%u]\n\
-    [CLIENT_FINAL]: tcpi_snd_cwnd=[%u]\n\
-    [CLIENT_FINAL]: tcpi_snd_ssthresh=[%u]\n\
-    [CLIENT_FINAL]: tcpi_total_retrans=[%u]\n",
+    printf("AverageUPL=%lf\n\
+    AverageRTT=%lf\n\
+    tcpi_retransmits=%d\n\
+    tcpi_rto=%u\n\
+    tcpi_lost=%u\n\
+    tcpi_retrans=%u\n\
+    tcpi_snd_cwnd=%u\n\
+    tcpi_snd_ssthresh[%u\n\
+    tcpi_total_retrans=%u\n",
     av_UPL,
     av_RTT,
     tcpi_retransmits,

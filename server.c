@@ -69,15 +69,17 @@ int main(int argc, char** argv)
         write(ResponseSocket, WBuffer, SIZEs2c);
     }
 
-    close(ResponseSocket);
-    close(ListenSocket);
-
     gettimeofday(&FinishTime, NULL);
 
     double throughput;
     throughput = COUNT*SIZEs2c/((FinishTime.tv_sec-BeginTime.tv_sec)+(FinishTime.tv_usec-BeginTime.tv_usec)/1000000.0);
 
-    printf("[SERVER_FINAL]: Throughput=[%lf] Byte/s\n",throughput);
+    printf("[SERVER_FINAL]: Server Throughput=[%lf] Byte/s\n",throughput);
+    
+    close(ResponseSocket);
+    close(ListenSocket);
+
+
 
     return 0;
 }
