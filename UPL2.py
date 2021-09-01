@@ -3,7 +3,6 @@ from mininet.net import Mininet
 from mininet.cli import CLI
 from mininet.link import TCLink
 import os
-import matplotlib.pyplot as plt
 
 
 PORT = 6666
@@ -32,7 +31,6 @@ dl2 = None
 bf1 = None
 bf2 = None
 
-#file = open('UPLlog','w')
 
 def setBBR():
     os.system("sed -i '/net\.core\.default_qdisc/d' /etc/sysctl.conf")
@@ -117,14 +115,15 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
     return Server_result,Client_result
 
 
-def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C):
+def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,file):
     for c2s in SIZE_C2S:
         for s2c in SIZE_S2C:
-            for bf1 in BUFFER1:
-                for dl1 in LATENCY1:
-                    for dl2 in LATENCY2:
-                        for bw1 in BANDWIDTH1:
-                            for bw2 in BANDWIDTH2:
+            for dl1 in LATENCY1:
+                for dl2 in LATENCY2:
+                    for bw1 in BANDWIDTH1:
+                        for bw2 in BANDWIDTH2:
+                            for bf1 in BUFFER1:
+                                file.write("c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps, bf1 = %d * BDP\n"%(c2s,s2c,dl1,dl2,bw1,bw2,bf1))
                                 for cca in TCPCCAs:
                                     upllist=[]
                                     rttlist=[]
@@ -139,11 +138,20 @@ def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2
                                         upl,rtt=get_upl_and_rtt(Client_result)
                                         upllist.append(upl)
                                         rttlist.append(rtt)
-                                    plt.plot(BUFFER2,upllist,label="UPL")
-                                    plt.plot(BUFFER2,rttlist,label="RTT")
-                                    plt.savefig("./"+cca+".jpg")
-                                    plt.show()
+                                    file.write(cca+"\n")
+                                    writeall(BUFFER2,file)
+                                    #file.write(BUFFER2+"\n")
+                                    writeall(upllist,file)
+                                    #file.write(upllist+"\n")
+                                    writeall(rttlist,file)
+                                    #file.write(rttlist+"\n\n\n\n")
+                                    file.flush()
+                                file.write("\n\n\n")
 
+def writeall(alist,file):
+    for item in alist:
+        file.write(str(item)+" ")
+    file.write("\n")
 
 def get_upl_and_rtt(Client_result):
     rtt = None
@@ -169,7 +177,9 @@ def Figure1():
     BANDWIDTH2=[10]
     LATENCY1=[1]
     LATENCY2=[100]
-    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C)
+    file = open('f1','w')
+    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,file)
+    file.close()
 def Figure2():
     SIZE_C2S = [1]
     SIZE_S2C = [100000]
@@ -180,7 +190,9 @@ def Figure2():
     BANDWIDTH2=[10]
     LATENCY1=[1]
     LATENCY2=[100]
-    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C)
+    file = open('f2','w')
+    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,file)
+    file.close()
 def Figure3():
     SIZE_C2S = [1]
     SIZE_S2C = [1000]
@@ -191,7 +203,9 @@ def Figure3():
     BANDWIDTH2=[100]
     LATENCY1=[1]
     LATENCY2=[100]
-    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C)
+    file = open('f3','w')
+    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,file)
+    file.close()
 def Figure4():
     SIZE_C2S = [1]
     SIZE_S2C = [100000]
@@ -202,6 +216,11 @@ def Figure4():
     BANDWIDTH2=[100]
     LATENCY1=[1]
     LATENCY2=[100]
-    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C)
+    file = open('f4','w')
+    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,file)
+    file.close()
 if __name__ == '__main__':
     Figure1()
+    Figure2()
+    Figure3()
+    Figure4()
