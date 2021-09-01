@@ -21,6 +21,7 @@ int main(int argc, char** argv)
     int COUNT;
     int SIZEc2s, SIZEs2c;
     struct timeval StartTime, EndTime;
+    struct timeval BeginTime, FinishTime;
     if (argc != 6 ){
         printf("client [IP ADDRESS] [PORT] [COUNT] [SIZEc2s] [SIZEs2c] \nCOUNT>200\nExample: ./client 10.10.10.1 80 2 1024 2048\n");
         return 0;
@@ -63,7 +64,7 @@ int main(int argc, char** argv)
     long UPL = 0;
 
     int cnt = 0;
-    
+    gettimeofday(&BeginTime, NULL);
     for(cnt = 0; cnt < COUNT; cnt++){
         gettimeofday(&StartTime, NULL);
 
@@ -89,12 +90,19 @@ int main(int argc, char** argv)
             printf("[CLIENT]:[%d]UPL:[%lf ms]RTT:[%lf ms]RTTVAR:[%u]\n", cnt+1, UPL/1000.0, RTT/1000.0, RTTVAR);
         }
     }
-    
+
+    gettimeofday(&FinishTime, NULL);
+
     close(MySocket);
 
     double av_RTT, av_UPL;
     av_RTT = RTTSum/(COUNT-100)/1000.0;
     av_UPL = UPLSum/(COUNT-100)/1000.0;
+
+    double throughput;
+    throughput = COUNT*SIZEc2s/((FinishTime.tv_sec-BeginTime.tv_sec)+(FinishTime.tv_usec-BeginTime.tv_usec)/1000000.0);
+
+    printf("[CLIENT_FINAL]: Throughput=[%lf] Byte/s\n",throughput);
 
     unsigned char tcpi_retransmits;
     unsigned int tcpi_rto,tcpi_lost,tcpi_retrans,tcpi_snd_cwnd,tcpi_snd_ssthresh,tcpi_total_retrans;
@@ -109,16 +117,15 @@ int main(int argc, char** argv)
 
 
     
-    printf("[CLIENT_FINAL]\n\
-    AverageUPL=[%lf]\n\
-    AverageRTT=[%lf]\n\
-    tcpi_retransmits=[%d]\n\
-    tcpi_rto=[%u]\n\
-    tcpi_lost=[%u]\n\
-    tcpi_retrans=[%u]\n\
-    tcpi_snd_cwnd=[%u]\n\
-    tcpi_snd_ssthresh=[%u]\n\
-    tcpi_total_retrans=[%u]\n",
+    printf("[CLIENT_FINAL]: AverageUPL=[%lf]\n\
+    [CLIENT_FINAL]: AverageRTT=[%lf]\n\
+    [CLIENT_FINAL]: tcpi_retransmits=[%d]\n\
+    [CLIENT_FINAL]: tcpi_rto=[%u]\n\
+    [CLIENT_FINAL]: tcpi_lost=[%u]\n\
+    [CLIENT_FINAL]: tcpi_retrans=[%u]\n\
+    [CLIENT_FINAL]: tcpi_snd_cwnd=[%u]\n\
+    [CLIENT_FINAL]: tcpi_snd_ssthresh=[%u]\n\
+    [CLIENT_FINAL]: tcpi_total_retrans=[%u]\n",
     av_UPL,
     av_RTT,
     tcpi_retransmits,

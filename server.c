@@ -6,10 +6,11 @@
 #include <sys/types.h>  //struct used in socket
 #include <netinet/in.h> //Linux IPv4 protocol implementation
 #include <arpa/inet.h>  //convert IP address from text to binary
+#include <sys/time.h>
 
 int main(int argc, char** argv)
 {
-    printf("[SERVER]: Server Started.\n");
+    //printf("[SERVER]: Server Started.\n");
     int PORT;
     int SIZEc2s, SIZEs2c,COUNT;
     if (argc != 5){
@@ -29,6 +30,8 @@ int main(int argc, char** argv)
     SERVER.sin_addr.s_addr = INADDR_ANY;
     SERVER.sin_port = PORT;
     SERVER.sin_family = AF_INET;
+
+    struct timeval BeginTime, FinishTime;
 
     char WBuffer[102400], RBuffer[102400]; memset(WBuffer,2,sizeof(WBuffer));
     //printf("[SERVER]: Server Initialized.\n");
@@ -53,17 +56,28 @@ int main(int argc, char** argv)
         exit(1);
     }
 
+    
 
     int cnt = 0;
     for(cnt=0;cnt<COUNT;cnt++){
         int c2s=0;
         while(c2s<SIZEc2s){
             c2s+=read (ResponseSocket, RBuffer, SIZEc2s);
+            if(cnt ==0) gettimeofday(&BeginTime, NULL);
+
         }
         write(ResponseSocket, WBuffer, SIZEs2c);
     }
 
     close(ResponseSocket);
     close(ListenSocket);
+
+    gettimeofday(&FinishTime, NULL);
+
+    double throughput;
+    throughput = COUNT*SIZEs2c/((FinishTime.tv_sec-BeginTime.tv_sec)+(FinishTime.tv_usec-BeginTime.tv_usec)/1000000.0);
+
+    printf("[SERVER_FINAL]: Throughput=[%lf] Byte/s\n",throughput);
+
     return 0;
 }
