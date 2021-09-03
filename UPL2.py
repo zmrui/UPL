@@ -101,9 +101,10 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
     h2 = net.get('h2')
     CLIENT_CMD1="./client " 
     CLIENT_CMD2=" %d %d %d %d"%(PORT,COUNT,cs,sc)
-    SERVER_CMD="./server %d %d %d %d &"%(PORT,COUNT,cs,sc)
-    Server_result = h2.cmd(SERVER_CMD)
-    print(Server_result)
+    SERVER_CMD="./server %d %d %d %d > server_temp &"%(PORT,COUNT,cs,sc)
+    #Server_result = h2.cmd(SERVER_CMD)
+    h2.cmd(SERVER_CMD)
+    #print(Server_result)
     #file.write(result)
     Client_result = h1.cmd(CLIENT_CMD1+str(h2.IP())+CLIENT_CMD2)
     #print(result)	
@@ -111,11 +112,17 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
     #result = h1.cmd("ping "+str(h2.IP())+" -c 20")
     #print(result)	
     #file.write(result)
+    server_temp_file=open('server_temp','r')
+    serverlines=server_temp_file.readlines()
+    Server_result=""
+    for serverline in serverlines:
+        Server_result+=serverline
+    print(Server_result)
     net.stop()
     return Server_result,Client_result
 
 
-def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,file):
+def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files):
     for c2s in SIZE_C2S:
         for s2c in SIZE_S2C:
             for dl1 in LATENCY1:
@@ -123,10 +130,13 @@ def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2
                     for bw1 in BANDWIDTH1:
                         for bw2 in BANDWIDTH2:
                             for bf1 in BUFFER1:
-                                file.write("c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps, bf1 = %d * BDP\n"%(c2s,s2c,dl1,dl2,bw1,bw2,bf1))
+                                filec.write("c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps, bf1 = %d * BDP\n"%(c2s,s2c,dl1,dl2,bw1,bw2,bf1))
+                                files.write("c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps, bf1 = %d * BDP\n"%(c2s,s2c,dl1,dl2,bw1,bw2,bf1))
                                 for cca in TCPCCAs:
-                                    upllist=[]
-                                    rttlist=[]
+                                    client_upl_list=[]
+                                    client_rtt_list=[]
+                                    server_upl_list=[]
+                                    server_rtt_list=[]
                                     for bf2 in BUFFER2:
                                         print("=====Start a Test=====")
                                         #file.write("=====Start a Test=====\n")
@@ -135,18 +145,28 @@ def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2
                                         print("=====End This Test=====")
                                         #file.write("=====End This Test=====\n\n\n\n")
                                         #file.flush()
-                                        upl,rtt=get_upl_and_rtt(Client_result)
-                                        upllist.append(upl)
-                                        rttlist.append(rtt)
-                                    file.write(cca+"\n")
-                                    writeall(BUFFER2,file)
+                                        client_upl,client_rtt=get_upl_and_rtt(Client_result)
+                                        server_upl,server_rtt=get_upl_and_rtt(Server_result)
+                                        #
+                                        client_upl_list.append(client_upl)
+                                        client_rtt_list.append(client_rtt)
+                                        #
+                                        server_upl_list.append(server_upl)
+                                        server_rtt_list.append(server_rtt)
+
+                                    filec.write(cca+"\n")
+                                    files.write(cca+"\n")
+                                    writeall(BUFFER2,filec)
+                                    writeall(BUFFER2,files)
                                     #file.write(BUFFER2+"\n")
-                                    writeall(upllist,file)
+                                    writeall(client_upl_list,filec)
+                                    writeall(server_upl_list,files)
                                     #file.write(upllist+"\n")
-                                    writeall(rttlist,file)
+                                    writeall(client_rtt_list,filec)
+                                    writeall(server_rtt_list,files)
                                     #file.write(rttlist+"\n\n\n\n")
-                                    file.flush()
-                                file.write("\n\n\n")
+                                    filec.flush()
+                                    files.flush()
 
 def writeall(alist,file):
     for item in alist:
@@ -156,7 +176,7 @@ def writeall(alist,file):
 def get_upl_and_rtt(Client_result):
     rtt = None
     upl = None
-    Client_lower = Client_result.split("[CLIENT_FINAL]:")[1]
+    Client_lower = Client_result.split("[FINAL]:")[1]
     lines = Client_lower.split( )
     for oneline in lines:
         if "AverageUPL" in oneline:
@@ -177,9 +197,11 @@ def Figure1():
     BANDWIDTH2=[10]
     LATENCY1=[1]
     LATENCY2=[100]
-    file = open('f1','w')
-    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,file)
-    file.close()
+    filec = open('f1c','w')
+    files = open('f1s','w')
+    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files)
+    files.close()
+    filec.close()
 def Figure2():
     SIZE_C2S = [1]
     SIZE_S2C = [100000]
@@ -221,6 +243,3 @@ def Figure4():
     file.close()
 if __name__ == '__main__':
     Figure1()
-    Figure2()
-    Figure3()
-    Figure4()

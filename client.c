@@ -103,7 +103,7 @@ int main(int argc, char** argv)
     double throughput;
     throughput = COUNT*SIZEc2s/((FinishTime.tv_sec-BeginTime.tv_sec)+(FinishTime.tv_usec-BeginTime.tv_usec)/1000000.0);
 
-    printf("[CLIENT_FINAL]:\nClient Throughput=%lf Byte/s\n",throughput);
+    printf("[FINAL]:\nClient Throughput=%lf Byte/s\n",throughput);
 
     unsigned char tcpi_retransmits;
     unsigned int tcpi_rto,tcpi_lost,tcpi_retrans,tcpi_snd_cwnd,tcpi_snd_ssthresh,tcpi_total_retrans;
