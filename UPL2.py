@@ -122,7 +122,11 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
     return Server_result,Client_result
 
 
-def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files):
+def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,client_file_name,server_file_name):
+    filec = open(client_file_name,'w')
+    files = open(server_file_name,'w')
+    filecfull = open(client_file_name+"_full",'w')
+    filesfull = open(server_file_name+"_full",'w')
     for c2s in SIZE_C2S:
         for s2c in SIZE_S2C:
             for dl1 in LATENCY1:
@@ -153,6 +157,9 @@ def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2
                                         #
                                         server_upl_list.append(server_upl)
                                         server_rtt_list.append(server_rtt)
+                                        #
+                                        filecfull.write(Client_result)
+                                        filesfull.write(Server_result)
 
                                     filec.write(cca+"\n")
                                     files.write(cca+"\n")
@@ -165,8 +172,10 @@ def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2
                                     writeall(client_rtt_list,filec)
                                     writeall(server_rtt_list,files)
                                     #file.write(rttlist+"\n\n\n\n")
-                                    filec.flush()
-                                    files.flush()
+    filec.close()
+    files.close()
+    filecfull.close()
+    filesfull.close()
 
 def writeall(alist,file):
     for item in alist:
@@ -197,11 +206,9 @@ def Figure1():
     BANDWIDTH2=[10]
     LATENCY1=[1]
     LATENCY2=[100]
-    filec = open('f1c','w')
-    files = open('f1s','w')
+    filec = "f1c"
+    files = "f1s"
     main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files)
-    files.close()
-    filec.close()
 def Figure2():
     SIZE_C2S = [1]
     SIZE_S2C = [100000]
@@ -212,9 +219,9 @@ def Figure2():
     BANDWIDTH2=[10]
     LATENCY1=[1]
     LATENCY2=[100]
-    file = open('f2','w')
-    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,file)
-    file.close()
+    filec = "f2c"
+    files = "f2s"
+    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files)
 def Figure3():
     SIZE_C2S = [1]
     SIZE_S2C = [1000]
@@ -225,9 +232,9 @@ def Figure3():
     BANDWIDTH2=[100]
     LATENCY1=[1]
     LATENCY2=[100]
-    file = open('f3','w')
-    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,file)
-    file.close()
+    filec = "f3c"
+    files = "f3s"
+    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files)
 def Figure4():
     SIZE_C2S = [1]
     SIZE_S2C = [100000]
@@ -238,8 +245,11 @@ def Figure4():
     BANDWIDTH2=[100]
     LATENCY1=[1]
     LATENCY2=[100]
-    file = open('f4','w')
-    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,file)
-    file.close()
+    filec = "f4c"
+    files = "f4s"
+    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files)
 if __name__ == '__main__':
     Figure1()
+    Figure2()
+    Figure3()
+    Figure4()
