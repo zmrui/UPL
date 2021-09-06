@@ -78,18 +78,17 @@ int main(int argc, char** argv)
 
         getsockopt(MySocket, SOL_TCP, TCP_INFO, &TCPInfo, &tcp_info_length);
         
+        RTT = TCPInfo.tcpi_rtt;
+        RTTVAR = TCPInfo.tcpi_rttvar;
+        UPL = 1000000*(EndTime.tv_sec-StartTime.tv_sec)+(EndTime.tv_usec-StartTime.tv_usec);
+        printf("%d %lf %lf %u\n", cnt+1, UPL/1000.0, RTT/1000.0, RTTVAR);
+        
         if(cnt>=100){
-            RTT = TCPInfo.tcpi_rtt;
-            RTTVAR = TCPInfo.tcpi_rttvar;
-
             RTTSum += RTT;
-            
-            UPL = 1000000*(EndTime.tv_sec-StartTime.tv_sec)+(EndTime.tv_usec-StartTime.tv_usec);
             UPLSum += UPL;
-
-            printf("%d %lf %lf %u\n", cnt+1, UPL/1000.0, RTT/1000.0, RTTVAR);
-//          printf("[CLIENT]:[%d]UPL:[%lf ms]RTT:[%lf ms]RTTVAR:[%u]\n", cnt+1, UPL/1000.0, RTT/1000.0, RTTVAR);
         }
+//          printf("[CLIENT]:[%d]UPL:[%lf ms]RTT:[%lf ms]RTTVAR:[%u]\n", cnt+1, UPL/1000.0, RTT/1000.0, RTTVAR);
+        
     }
 
     gettimeofday(&FinishTime, NULL);

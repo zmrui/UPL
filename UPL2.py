@@ -31,20 +31,6 @@ dl2 = None
 bf1 = None
 bf2 = None
 
-
-def setBBR():
-    os.system("sed -i '/net\.core\.default_qdisc/d' /etc/sysctl.conf")
-    os.system("sed -i '/net\.ipv4\.tcp_congestion_control/d' /etc/sysctl.conf")
-    os.system("echo 'net.core.default_qdisc=fq' >> /etc/sysctl.conf")
-    os.system("echo 'net.ipv4.tcp_congestion_control=bbr' >> /etc/sysctl.conf")
-    os.system("sysctl -p")
-
-def setCUBIC():
-    os.system("sed -i '/net\.core\.default_qdisc/d' /etc/sysctl.conf")
-    os.system("sed -i '/net\.ipv4\.tcp_congestion_control/d' /etc/sysctl.conf")
-    os.system("echo 'net.core.default_qdisc=fq' >> /etc/sysctl.conf")
-    os.system("echo 'net.ipv4.tcp_congestion_control=cubic' >> /etc/sysctl.conf")
-    os.system("sysctl -p")
 class MyTopo( Topo ): 
     def build( self ):
         s1 = self.addSwitch('s1')
@@ -67,12 +53,9 @@ class MyTopo( Topo ):
 
 def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
 
+
     os.system("sudo mn -c >/dev/null")
-    if cca == "BBR":
-        setBBR()
-    elif cca == "CUBIC":
-        setCUBIC()
-    
+
     global bw1
     global bw2
     global dl1
@@ -87,8 +70,8 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
     dl1=str(latency1)+"ms"
     dl2=str(latency2)+"ms"
     #buffer unit: packet
-    bf1 = int(2*buffer1*bw1*latency1*1000/8/1460)
-    bf2 = int(2*buffer2*bw2*latency2*1000/8/1460)
+    bf1 = int(2*buffer2*bw2*(latency1+latency1+latency2)*1000/8/1500)
+    bf2 = int(2*buffer2*bw2*(latency1+latency1+latency2)*1000/8/1500)
     print("bf1:"+str(bf1)+" bf2:"+str(bf2)+" bw1:"+str(bw1)+" bw2:"+str(bw2)+" dl1:"+str(dl1)+" dl2:"+str(dl2))
     #file.write("[MININET:] cca:"+ cca +" bf1:"+str(bf1)+" bf2:"+str(bf2)+" bw1:"+str(bw1)+" bw2:"+str(bw2)+" dl1:"+str(dl1)+" dl2:"+str(dl2)+"\n")
 
@@ -99,6 +82,24 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
     net.start()
     h1 = net.get('h1')	
     h2 = net.get('h2')
+
+    if cca == "BBR":
+        h1.cmd("./set_bbr.sh")
+        h2.cmd("./set_bbr.sh")
+        if "bbr" not in h1.cmd("sysctl net.ipv4.tcp_congestion_control") :
+            CLI(net)
+        elif "bbr" not in h2.cmd("sysctl net.ipv4.tcp_congestion_control"):
+            CLI(net)
+    elif cca == "CUBIC":
+        h1.cmd("./set_cubic.sh")
+        h2.cmd("./set_cubic.sh")
+        if "cubic" not in h1.cmd("sysctl net.ipv4.tcp_congestion_control") :
+            CLI(net)
+        elif "cubic" not in h2.cmd("sysctl net.ipv4.tcp_congestion_control"):
+            CLI(net)
+    
+
+
     CLIENT_CMD1="./client " 
     CLIENT_CMD2=" %d %d %d %d"%(PORT,COUNT,cs,sc)
     SERVER_CMD="./server %d %d %d %d > server_temp &"%(PORT,COUNT,cs,sc)
@@ -134,8 +135,8 @@ def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2
                     for bw1 in BANDWIDTH1:
                         for bw2 in BANDWIDTH2:
                             for bf1 in BUFFER1:
-                                filec.write("c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps, bf1 = %d * BDP\n"%(c2s,s2c,dl1,dl2,bw1,bw2,bf1))
-                                files.write("c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps, bf1 = %d * BDP\n"%(c2s,s2c,dl1,dl2,bw1,bw2,bf1))
+                                filec.write("c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps\n"%(c2s,s2c,dl1,dl2,bw1,bw2))
+                                files.write("c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps\n"%(c2s,s2c,dl1,dl2,bw1,bw2))
                                 for cca in TCPCCAs:
                                     client_upl_list=[]
                                     client_rtt_list=[]
@@ -248,8 +249,24 @@ def Figure4():
     filec = "f4c"
     files = "f4s"
     main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files)
+
+def Figure5():
+    SIZE_C2S = [1]
+    SIZE_S2C = [100000]
+    TCPCCAs=["BBR", "CUBIC"]
+    BUFFER1=[1.0]
+    BUFFER2=[0.25,0.5,1.0,2.0,4.0]
+    BANDWIDTH1=[200]
+    BANDWIDTH2=[100]
+    LATENCY1=[1]
+    LATENCY2=[100]
+    filec = "f5c"
+    files = "f5s"
+    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files)
+
 if __name__ == '__main__':
     Figure1()
-    Figure2()
-    Figure3()
-    Figure4()
+    #Figure2()
+    #Figure3()
+    #Figure4()
+    Figure5()
