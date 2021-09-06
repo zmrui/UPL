@@ -35,7 +35,7 @@ def genplt(filename):
         datafile.write(y22_rtt_list[i]+"\n")
     datafile.close()
 
-    CMD1="#set output '%s.png' "%filename
+    CMD1="set term png\nset output '%s.png' "%filename
     CMD2='''
 set key fixed right top vertical Right noreverse noenhanced autotitle nobox
 set style data linespoints
@@ -59,6 +59,6 @@ def linetolist(line):
 
 
 if __name__ == '__main__':
-    l=['f5s2','f5s']
+    l=['f5s2','f5c2']
     for i in l:
         genplt(i)

@@ -1,4 +1,5 @@
-#set output 'f5c2.png' 
+set term png
+set output 'f5c2.png' 
 
 set key fixed right top vertical Right noreverse noenhanced autotitle nobox
 set style data linespoints
