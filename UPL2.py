@@ -137,6 +137,7 @@ def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2
                             for bf1 in BUFFER1:
                                 filec.write("c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps\n"%(c2s,s2c,dl1,dl2,bw1,bw2))
                                 files.write("c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps\n"%(c2s,s2c,dl1,dl2,bw1,bw2))
+                                                                
                                 for cca in TCPCCAs:
                                     client_upl_list=[]
                                     client_rtt_list=[]
@@ -146,6 +147,8 @@ def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2
                                         print("=====Start a Test=====")
                                         #file.write("=====Start a Test=====\n")
                                         print(cca,bf1,bf2,bw1,bw2,dl1,dl2)
+                                        filecfull.write("cca=%s, bf1=%d, bf2=%d, c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps\n"%(cca,bf1,bf2,c2s,s2c,dl1,dl2,bw1,bw2))
+                                        filesfull.write("cca=%s, bf1=%d, bf2=%d, c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps\n"%(cca,bf1,bf2,c2s,s2c,dl1,dl2,bw1,bw2))
                                         Server_result,Client_result=onetest(cca,bf1,bf2,bw1,bw2,dl1,dl2,c2s,s2c)
                                         print("=====End This Test=====")
                                         #file.write("=====End This Test=====\n\n\n\n")
@@ -252,21 +255,34 @@ def Figure4():
 
 def Figure5():
     SIZE_C2S = [1]
-    SIZE_S2C = [100000]
+    SIZE_S2C = [1000000]
     TCPCCAs=["BBR", "CUBIC"]
     BUFFER1=[1.0]
-    BUFFER2=[0.25,0.5,1.0,2.0,4.0]
-    BANDWIDTH1=[200]
-    BANDWIDTH2=[100]
+    BUFFER2=[0.25,4.0]
+    BANDWIDTH1=[100]
+    BANDWIDTH2=[10]
     LATENCY1=[1]
-    LATENCY2=[100]
+    LATENCY2=[50]
     filec = "f5c"
     files = "f5s"
     main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files)
 
+def Figure6():
+    SIZE_C2S = [1]
+    SIZE_S2C = [1000000]
+    TCPCCAs=["BBR", "CUBIC"]
+    BUFFER1=[1.0]
+    BUFFER2=[0.25,4.0]
+    BANDWIDTH1=[100]
+    BANDWIDTH2=[10]
+    LATENCY1=[1]
+    LATENCY2=[50]
+    filec = "f6c"
+    files = "f6s"
+    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files)
 if __name__ == '__main__':
-    Figure1()
+    #Figure1()
     #Figure2()
     #Figure3()
     #Figure4()
-    Figure5()
+    Figure6()
