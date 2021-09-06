@@ -59,6 +59,6 @@ def linetolist(line):
 
 
 if __name__ == '__main__':
-    l=['f1c','f2c','f3c','f4c','f5c2']
+    l=['f5s2','f5s']
     for i in l:
         genplt(i)
