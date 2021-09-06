@@ -47,7 +47,7 @@ int main(int argc, char** argv)
     SERVER.sin_port = PORT;
     SERVER.sin_family = AF_INET;
 
-    char WBuffer[102400], RBuffer[102400]; memset(WBuffer,2,sizeof(WBuffer));
+    char WBuffer[1024000], RBuffer[1024000]; memset(WBuffer,2,sizeof(WBuffer));
     //printf("[SERVER]: Server Initialized.\n");
     int ListenSocket, ResponseSocket;
     socklen_t CLIENT_LEN;

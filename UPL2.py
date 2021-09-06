@@ -51,7 +51,7 @@ class MyTopo( Topo ):
         self.addLink(s2,h2, cls=TCLink, bw=bw1, delay=dl1, max_queue_size=bf1, loss=0, use_htb=True, use_fq=True)
 
 
-def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
+def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc,fc,fs):
 
 
     os.system("sudo mn -c >/dev/null")
@@ -99,6 +99,10 @@ def onetest(cca,buffer1,buffer2,bandwidth1,bandwidth2,latency1,latency2,cs,sc):
             CLI(net)
     
 
+    fc.write("cca=%s, bf1=%d, bf2=%d, c2s=%d bytes, s2c=%d bytes, d1=%sms, d2=%sms, bw1=%dMbps, bw2=%dMbps\n"%(cca,bf1,bf2,cs,sc,dl1,dl2,bw1,bw2))
+    fs.write("cca=%s, bf1=%d, bf2=%d, c2s=%d bytes, s2c=%d bytes, d1=%sms, d2=%sms, bw1=%dMbps, bw2=%dMbps\n"%(cca,bf1,bf2,cs,sc,dl1,dl2,bw1,bw2))
+    fc.flush()
+    fs.flush()                  
 
     CLIENT_CMD1="./client " 
     CLIENT_CMD2=" %d %d %d %d"%(PORT,COUNT,cs,sc)
@@ -147,9 +151,7 @@ def main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2
                                         print("=====Start a Test=====")
                                         #file.write("=====Start a Test=====\n")
                                         print(cca,bf1,bf2,bw1,bw2,dl1,dl2)
-                                        filecfull.write("cca=%s, bf1=%d, bf2=%d, c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps\n"%(cca,bf1,bf2,c2s,s2c,dl1,dl2,bw1,bw2))
-                                        filesfull.write("cca=%s, bf1=%d, bf2=%d, c2s=%d bytes, s2c=%d bytes, d1=%dms, d2=%dms, bw1=%dMbps, bw2=%dMbps\n"%(cca,bf1,bf2,c2s,s2c,dl1,dl2,bw1,bw2))
-                                        Server_result,Client_result=onetest(cca,bf1,bf2,bw1,bw2,dl1,dl2,c2s,s2c)
+                                        Server_result,Client_result=onetest(cca,bf1,bf2,bw1,bw2,dl1,dl2,c2s,s2c,filecfull,filesfull)
                                         print("=====End This Test=====")
                                         #file.write("=====End This Test=====\n\n\n\n")
                                         #file.flush()
@@ -280,9 +282,39 @@ def Figure6():
     filec = "f6c"
     files = "f6s"
     main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files)
+
+
+def Figure10():
+    SIZE_C2S = [1]
+    SIZE_S2C = [1000000]
+    TCPCCAs=["BBR", "CUBIC"]
+    BUFFER1=[1.0]
+    BUFFER2=[0.25,0.5,1.0,2.0,4.0]
+    BANDWIDTH1=[100]
+    BANDWIDTH2=[10]
+    LATENCY1=[1]
+    LATENCY2=[50]
+    filec = "f10c"
+    files = "f10s"
+    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files)
+
+def Figure11():
+    SIZE_C2S = [1]
+    SIZE_S2C = [1000000]
+    TCPCCAs=["BBR", "CUBIC"]
+    BUFFER1=[1.0]
+    BUFFER2=[0.25,0.5,1.0,2.0,4.0]
+    BANDWIDTH1=[100]
+    BANDWIDTH2=[10]
+    LATENCY1=[1]
+    LATENCY2=[50]
+    filec = "f11c"
+    files = "f11s"
+    main(TCPCCAs,BUFFER1,BUFFER2,BANDWIDTH1,BANDWIDTH2,LATENCY1,LATENCY2,SIZE_C2S,SIZE_S2C,filec,files)
 if __name__ == '__main__':
     #Figure1()
     #Figure2()
     #Figure3()
     #Figure4()
-    Figure6()
+    Figure10()
+    Figure11()
